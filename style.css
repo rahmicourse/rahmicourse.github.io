@@ -225,8 +225,9 @@ button:active{
     height:30px;
     background-color:#979797;
     border:none;
-    outline: none;
-    border-radius:5px;
+    margin-top :2px;
+    outline: 1px; 
+    border-radius:1px;
 }
  
 .testimoni{
