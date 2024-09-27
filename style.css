@@ -215,7 +215,7 @@ button:active{
     color:#8F8F8F;
     text-align:center;
     width: 230px;
-    margin:0px 5px 10px 0px;
+    margin:0px 5px 10px 2px;
 }
  
 .box-1 button,
@@ -223,7 +223,7 @@ button:active{
 .box-3 button{
     width:200px;
     height:30px;
-    background-color:#979797;
+    background-color:#20B2AA;
     border:none;
     margin-top :2px;
     outline: 1px; 
