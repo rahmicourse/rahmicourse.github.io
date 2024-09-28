@@ -205,7 +205,7 @@ button:active{
     color:#000000;
     font-family: calibri;
     font-size: 23px;
-    line-height:0px;
+    line-height:2px;
 }
  
 .box-1 p:nth-child(3),
@@ -215,19 +215,19 @@ button:active{
     color:#8F8F8F;
     text-align:center;
     width: 230px;
-    margin:0px 5px 10px 0px;
+    margin:0px 5px 10px 2px;
 }
  
 .box-1 button,
 .box-2 button,
 .box-3 button{
-    width:100px;
-    height:30px;
-    background-color:#979797;
+    width:200px;
+    height:40px;
+    background-color:#20B2AA;
     border:none;
     margin-top :2px;
     outline: 1px; 
-    border-radius:1px;
+    border-radius:8px;
 }
  
 .testimoni{
