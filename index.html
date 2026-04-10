@@ -87,14 +87,23 @@ body {
 }
 /* Tampilan HP */
 @media (max-width: 768px) {
-  .hero {
-    background: url("https://raw.githubusercontent.com/rahmicourse/rahmicourse.github.io/main/images/fotoku%20transparan.png") no-repeat center/contain,
-                linear-gradient(rgba(44,62,80,0.9), rgba(44,62,80,0.9));
+  .menu-btn {
+    display: flex;
+    flex-wrap: wrap;       /* tombol bisa turun ke baris berikutnya */
+    justify-content: center;
+    gap: 10px;
   }
-  .photo {
-    display: none; /* sembunyikan img */
+
+  .menu-btn a {
+    flex: 1 1 45%;         /* tiap tombol ambil ± setengah lebar layar */
+    text-align: center;
+  }
+
+  .content p {
+    text-align: justify;   /* teks paragraf rapi kiri-kanan */
   }
 }
+
 </style>
 </head>
 
