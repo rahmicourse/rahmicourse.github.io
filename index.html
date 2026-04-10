@@ -89,18 +89,22 @@ body {
 @media (max-width: 768px) {
 
     .hero {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row; /* tetap sejajar */
+    	justify-content: center;
+    	align-items: center;
+    	text-align: left;
     }
 
     .content {
         max-width: 100%;
+		flex: 1;
     }
 
     .photo {
-        position: static; /* penting */
-        width: 200px;
-        margin-top: 20px;
+          flex: 1; /* foto ambil ruang */
+		max-width: 150px; /* kecilkan agar muat */
+		height: auto;
+		margin-left: 20px;
     }
 
     .menu-btn {
