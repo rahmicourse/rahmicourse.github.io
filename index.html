@@ -4,116 +4,73 @@
 <meta charset="utf-8">
 <title>Rahmi Portfolio</title>
 
-<!-- ICON -->
 <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
 
 <style>
 body {
     margin: 0;
     font-family: Arial;
-    background: #f5f5f5;
-	background: linear-gradient(to right, #f5f5f5, #e0ecff);
-	margin: 0;
-    padding: 0;
 }
 
-/* SIDEBAR */
-.sidebar {
-    position: fixed;
-    width: 220px;
-    height: 100%;
-    background: #2c3e50;
-    padding-top: 30px;
-    text-align: center;
-}
-
-.sidebar h2 {
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(44,62,80,0.8), rgba(44,62,80,0.8)),
+    url("https://raw.githubusercontent.com/rahmicourse/rahmicourse.github.io/main/images/fotoku%20transparan.png");
+    background-size: cover;
+    background-position: center;
     color: white;
-    margin-bottom: 30px;
-}
-
-.sidebar a {
-    display: block;
-    color: white;
-    padding: 15px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.sidebar a:hover {
-    background: #3498db;
-}
-
-/* MAIN CONTENT */
-.main {
-    margin-left: 220px;
-    padding: 40px;
-}
-
-.container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    padding: 50px;
 }
 
 /* TEXT */
-.text p {
-    color: #555;
+.content {
+    max-width: 600px;
 }
 
-.nama {
-    font-size: 32px;
-    font-weight: bold;
-    color: #2c3e50;
+.content h1 {
+    font-size: 40px;
 }
 
-/* BUTTON */
-.btn {
-    background: #3498db;
+.content p {
+    line-height: 1.6;
+}
+
+/* BUTTON MENU */
+.menu-btn {
+    margin-top: 20px;
+}
+
+.menu-btn a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 18px;
+    border: 2px solid white;
     color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
-.btn:hover {
-    background: #2980b9;
-}
-
-/* IMAGE */
-.model {
-    width: 380px;
+.menu-btn a:hover {
+    background: white;
+    color: #2c3e50;
 }
 
 /* SOCIAL */
 .social {
-    margin-top: 30px;
-}
-
-.social a {
-    font-size: 25px;
-    margin: 10px;
-    color: #2c3e50;
-}
-
-.social a:hover {
-    color: #3498db;
-}
-/* project */
-	.projects {
     margin-top: 20px;
 }
 
-.projects a {
-    display: block;
-    text-decoration: none;
-    color: #2c3e50;
-    margin: 5px 0;
+.social a {
+    color: white;
+    font-size: 22px;
+    margin-right: 10px;
 }
 
-.projects a:hover {
+.social a:hover {
     color: #3498db;
 }
 </style>
@@ -121,48 +78,34 @@ body {
 
 <body>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-    <h2>Rahmi</h2>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-</div>
+<div class="hero">
+    <div class="content">
+        <p>Hello, I'm</p>
+        <h1>RAHMI SUKMAWIDIANTO</h1>
+        <p>English Teacher</p>
 
-<!-- MAIN -->
-<div class="main">
-    <div class="container">
+        <p>
+        As an English teacher, I am passionate about learning new things. 
+        I believe learning is a lifelong journey and it is never too late to grow. 
+        By learning coding, I sharpen my logical thinking to create meaningful impact.
+        </p>
 
-        <!-- TEXT -->
-        <div class="text">
-            <p>Hi, Guys!</p>
-            <div class="nama">I’M RAHMI SUKMAWIDIANTO</div>
-            <p>English Teacher</p>
-            <p>
-              As an English teacher, I am passionate about learning new things and exploring new knowledge. Being an easy-going person, I believe it is never too late to learn, as learning is a lifelong journey. I believe that creating meaningful change requires courage, and by learning coding, I continue to sharpen my logical thinking to create purposeful outcomes.
-            </p>
-
-            <button class="btn">Contact Me</button>
-			    <!-- INI PROJECT (LETANYA DI SINI 👇) -->
-    <div class="projects">
-        <p><strong>My Projects:</strong></p>
-        <a href="https://parah.my.id/" target="_blank">🌐 My Website Project</a>
-        <a href="https://github.com/me50/rahmicourse/branches/yours" target="_blank">💻 Python Problem Set</a>
-        <a href="recounttx1.html" target="_blank">📘 Interactive Learning Media</a>
-        <a href="mpi.html">📘 MPI Recount Text V.2</a>
-    </div>
-
-
-            <!-- SOCIAL -->
-            <div class="social">
-                <a href="https://www.instagram.com/rahmi_sukmawidianto"><i class="fab fa-instagram"></i></a>
-                <a href="www.linkedin.com/in/sukmawidiantorahmi"><i class="fab fa-linkedin"></i></a>
-                <a href="https://web.facebook.com/rahmi.sukmawidianto"><i class="fab fa-facebook"></i></a>
-            </div>
+        <!-- BUTTON MENU -->
+        <div class="menu-btn">
+            <a href="#">Contact</a>
+            <a href="#">About</a>
+            <a href="https://parah.my.id/" target="_blank">My Website Project</a>
+            <a href="https://github.com/me50/rahmicourse/branches/yours" target="_blank">Python Problem Set</a>
+            <a href="mpi.html">Interactive Learning Media</a>
         </div>
 
-        <!-- IMAGE -->
-        <img class="model" src="https://raw.githubusercontent.com/rahmicourse/rahmicourse.github.io/main/images/fotoku%20transparan.png">
+        <!-- SOCIAL -->
+        <div class="social">
+            <a href="https://www.instagram.com/rahmi_sukmawidianto"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/sukmawidiantorahmi"><i class="fab fa-linkedin"></i></a>
+            <a href="https://web.facebook.com/rahmi.sukmawidianto"><i class="fab fa-facebook"></i></a>
+			<a href="https://www.youtube.com/@mr.rahmifamily3002/videos" target="_blank"><i class="fab fa-youtube"></i>
+        </div>
 
     </div>
 </div>
