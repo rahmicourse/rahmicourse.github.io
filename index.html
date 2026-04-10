@@ -85,6 +85,30 @@ body {
     width: 300px;
     height: auto;
 }
+/* Tampilan HP */
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+
+    .photo {
+        position: static; /* penting */
+        width: 200px;
+        margin-top: 20px;
+    }
+
+    .menu-btn {
+        justify-content: center;
+        flex-wrap: wrap; /* biar tombol rapi di HP */
+    }
+}
+	
 </style>
 </head>
 
