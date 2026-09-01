@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 
 export default defineConfig({
-  base: '/Lets-practice1/', // <-- Ubah bagian ini agar sesuai dengan nama folder di GitHub
+  base: './', // <-- sudah diUBAH KE './' (Titik Garis Miring)
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: { 
