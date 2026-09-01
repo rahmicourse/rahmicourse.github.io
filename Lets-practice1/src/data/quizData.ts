@@ -1,0 +1,158 @@
+import { QuizQuestion } from '../types';
+
+export const QUIZ_QUESTIONS: QuizQuestion[] = [
+  {
+    id: 1,
+    category: 'expressions',
+    categoryLabel: 'Expressions',
+    type: 'mcq',
+    question: 'What is the most polite expression when you meet someone for the first time?',
+    options: [
+      'Nice to meet you!',
+      'Where is your money?',
+      'Good night, see you tomorrow.',
+      'Be quiet, please.'
+    ],
+    correctAnswer: 'Nice to meet you!',
+    explanation: '"Nice to meet you!" adalah ungkapan salam yang sopan dan ramah saat pertama kali bertemu seseorang.',
+    hint: 'Ungkapan yang artinya "Senang bertemu denganmu!".',
+  },
+  {
+    id: 2,
+    category: 'dialogue',
+    categoryLabel: 'Short Dialogue',
+    type: 'mcq',
+    context: 'Alex: "Hi! My name is Alex. What is your name?"\nRani: "_____"',
+    question: 'Which is the best response for Rani to answer Alex?',
+    options: [
+      "Hello Alex! I'm Rani. Nice to meet you.",
+      "I am thirteen years old.",
+      "I live in Jakarta.",
+      "My hobby is swimming."
+    ],
+    correctAnswer: "Hello Alex! I'm Rani. Nice to meet you.",
+    explanation: 'Ketika seseorang menanyakan "What is your name?", respon yang tepat adalah menyebutkan nama diri (I\'m Rani).',
+    hint: 'Pilih jawaban yang menyebutkan nama diri dan salam perkenalan.',
+  },
+  {
+    id: 3,
+    category: 'grammar',
+    categoryLabel: 'Grammar',
+    type: 'mcq',
+    question: 'Choose the grammatically correct sentence:',
+    options: [
+      "I am thirteen years old.",
+      "I thirteen years old.",
+      "I am thirteen year olds.",
+      "I have thirteen years old."
+    ],
+    correctAnswer: "I am thirteen years old.",
+    explanation: 'Pola standar menyatakan umur dalam bahasa Inggris adalah: Subject + to be (am/is/are) + number + years old.',
+    hint: 'Gunakan to be "am" dan kata jamak "years old".',
+  },
+  {
+    id: 4,
+    category: 'vocabulary',
+    categoryLabel: 'Vocabulary',
+    type: 'mcq',
+    question: 'Which of the following words is a school subject?',
+    options: [
+      'English',
+      'Badminton',
+      'Surabaya',
+      'Sister'
+    ],
+    correctAnswer: 'English',
+    explanation: '"English" adalah mata pelajaran (school subject). Badminton adalah hobi/olahraga, Surabaya adalah kota, dan Sister adalah anggota keluarga.',
+    hint: 'Mata pelajaran bahasa yang sedang kita pelajari sekarang.',
+  },
+  {
+    id: 5,
+    category: 'expressions',
+    categoryLabel: 'Expressions',
+    type: 'short_answer',
+    question: 'How do you ask where someone comes from? Complete this question: "Where _____ you from?" (Type the missing word)',
+    correctAnswer: 'are',
+    acceptableAnswers: ['are', 'ARE', 'Are'],
+    explanation: 'Pertanyaan lengkapnya adalah: "Where are you from?" (To be "are" berpasangan dengan subjek "you").',
+    hint: 'To be yang berpasangan dengan "you" (3 huruf: a-r-e).',
+  },
+  {
+    id: 6,
+    category: 'reading',
+    categoryLabel: 'Reading Comprehension',
+    type: 'mcq',
+    context: 'Read this student profile:\n"Hello! My name is Dimas. I am 13 years old. I study at SMP Harapan. I live in Bandung. My hobby is playing badminton and my favorite subject is Science."',
+    question: 'Where does Dimas study?',
+    options: [
+      'At SMP Harapan',
+      'At SMP Merdeka',
+      'In Bandung',
+      'At home'
+    ],
+    correctAnswer: 'At SMP Harapan',
+    explanation: 'Berdasarkan teks bacaan: "I study at SMP Harapan."',
+    hint: 'Perhatikan kalimat ketiga pada profil Dimas di atas.',
+  },
+  {
+    id: 7,
+    category: 'reading',
+    categoryLabel: 'Reading Comprehension',
+    type: 'mcq',
+    context: 'Based on the same profile of Dimas:\n"Hello! My name is Dimas. I am 13 years old. I study at SMP Harapan. I live in Bandung. My hobby is playing badminton and my favorite subject is Science."',
+    question: 'What is Dimas\'s favorite subject?',
+    options: [
+      'Science',
+      'English',
+      'Badminton',
+      'Math'
+    ],
+    correctAnswer: 'Science',
+    explanation: 'Berdasarkan teks: "my favorite subject is Science."',
+    hint: 'Cari kata "favorite subject" di akhir kalimat profil.',
+  },
+  {
+    id: 8,
+    category: 'grammar',
+    categoryLabel: 'Grammar',
+    type: 'mcq',
+    question: 'Complete the sentence: "There _____ four people in my family."',
+    options: [
+      'are',
+      'is',
+      'am',
+      'be'
+    ],
+    correctAnswer: 'are',
+    explanation: 'Karena "four people" adalah jamak (plural/lebih dari satu), kita gunakan "There are".',
+    hint: 'Gunakan bentuk to be untuk benda jamak.',
+  },
+  {
+    id: 9,
+    category: 'dialogue',
+    categoryLabel: 'Short Dialogue',
+    type: 'short_answer',
+    context: 'Tono: "What is your hobby?"\nSiti: "My hobby _____ reading novels."',
+    question: 'Type the missing to be in Siti\'s answer (am / is / are):',
+    correctAnswer: 'is',
+    acceptableAnswers: ['is', 'IS', 'Is'],
+    explanation: 'Karena "My hobby" adalah tunggal (singular/satu hobi), to be yang tepat adalah "is".',
+    hint: 'To be untuk subjek tunggal (2 huruf: i-s).',
+  },
+  {
+    id: 10,
+    category: 'vocabulary',
+    categoryLabel: 'Vocabulary & Safety',
+    type: 'mcq',
+    question: 'When asked for an address in online practice, what is the best practice?',
+    options: [
+      'Use a fictional address (e.g. Jl. Bintang No. 10) to protect privacy.',
+      'Always give your exact real house number and phone number.',
+      'Give your confidential passwords.',
+      'Refuse to speak in English.'
+    ],
+    correctAnswer: 'Use a fictional address (e.g. Jl. Bintang No. 10) to protect privacy.',
+    explanation: 'Sebagai pelajar dan pengguna di bawah umur, gunakan alamat fiktif atau hanya sebutkan nama kota untuk menjaga keamanan privasi pribadi.',
+    hint: 'Pilihlah jawaban yang mengutamakan perlindungan privasi (fictional address).',
+  },
+];
