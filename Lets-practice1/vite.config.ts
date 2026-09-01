@@ -4,9 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 
 export default defineConfig({
-  // Sesuaikan base dengan folder hasil deploy di GitHub Pages
-  // Jika isi dist diupload ke folder "lets-practice" di repo:
-  base: "/lets-practice/",
+  base: "/lets-practice/", // sesuaikan dengan folder deploy di GitHub Pages
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
