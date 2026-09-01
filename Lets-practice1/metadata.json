@@ -1,0 +1,9 @@
+{
+  "name": "English Buddy – Introducing & Meeting New People",
+  "description": "An interactive educational English learning chatbot for Indonesian Grade 7 students to practice introducing themselves and meeting new people.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "CLIENT_SIDE_LEARNING",
+    "BROWSER_TEXT_TO_SPEECH"
+  ]
+}
