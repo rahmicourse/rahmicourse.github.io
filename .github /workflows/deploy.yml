@@ -17,9 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./Lets-practice1
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,17 +25,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-          cache-dependency-path: './Lets-practice1/package-lock.json'
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: |
+          cd Lets-practice1
+          npm install --legacy-peer-deps
 
       - name: Build
-        run: npm run build
+        run: |
+          cd Lets-practice1
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
