@@ -70,7 +70,7 @@ export default function App() {
             English Buddy 👋 • Introducing & Meeting New People
           </p>
           <p className="text-slate-400">
-            SMP / Junior High School Grade 7 English Learning
+           Developed by Rahmi Sukmawidianto ❤️ Powered Google AI Studio Junior
           </p>
         </div>
       </footer>
