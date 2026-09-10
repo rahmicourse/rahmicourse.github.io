@@ -39,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentMode, onSelectMode }) => 
               </span>
             </div>
             <p className="text-[11px] text-slate-500 font-medium hidden sm:block">
-              Introducing & Meeting New People
+              Developed by Rahmi Sukmawidianto
             </p>
           </div>
         </button>
