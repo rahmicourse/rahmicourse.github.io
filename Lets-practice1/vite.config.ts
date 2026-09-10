@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 
 export default defineConfig({
-  base: "/lets-practice/",   // ← penting untuk GitHub Pages
+  base: "/Lets-practice1/",   // ← penting untuk GitHub Pages
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: { '@': path.resolve(__dirname, './src') },
