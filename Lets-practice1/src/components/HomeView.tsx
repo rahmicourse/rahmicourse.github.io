@@ -131,7 +131,47 @@ export const HomeView: React.FC<HomeViewProps> = ({ onSelectMode }) => {
 
       {/* Safety Notice */}
       <PrivacyBanner />
+ {/* How to Use Section */}
+      <section className="bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-3xl p-6 sm:p-8 shadow-md">
+        <div className="flex items-center gap-2 mb-4">
+          <HelpCircle className="w-5 h-5 text-amber-400" />
+          <h3 className="text-lg sm:text-xl font-bold font-display text-white">
+            Cara Penggunaan (How to Use)
+          </h3>
+        </div>
 
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+          <div className="bg-white/10 rounded-2xl p-4 border border-white/10">
+            <div className="w-8 h-8 rounded-xl bg-amber-400 text-slate-900 font-black flex items-center justify-center mb-3">
+              1
+            </div>
+            <h4 className="font-bold text-white mb-1">Pelajari Ungkapan</h4>
+            <p className="text-slate-300 text-xs leading-relaxed">
+              Buka menu <strong>📚 Learn</strong> untuk melihat rumus kalimat perkenalan dan dengarkan cara pelafalan audionya.
+            </p>
+          </div>
+
+          <div className="bg-white/10 rounded-2xl p-4 border border-white/10">
+            <div className="w-8 h-8 rounded-xl bg-indigo-400 text-slate-900 font-black flex items-center justify-center mb-3">
+              2
+            </div>
+            <h4 className="font-bold text-white mb-1">Praktik Percakapan AI</h4>
+            <p className="text-slate-300 text-xs leading-relaxed">
+              Masuk ke <strong>💬 Conversation</strong> untuk mengobrol dengan Alex. Jawab satu per satu pertanyaan dalam bahasa Inggris.
+            </p>
+          </div>
+
+          <div className="bg-white/10 rounded-2xl p-4 border border-white/10">
+            <div className="w-8 h-8 rounded-xl bg-emerald-400 text-slate-900 font-black flex items-center justify-center mb-3">
+              3
+            </div>
+            <h4 className="font-bold text-white mb-1">Uji Pemahaman</h4>
+            <p className="text-slate-300 text-xs leading-relaxed">
+              Asah kemampuan di <strong>🧩 Vocabulary</strong>, <strong>✍️ Grammar</strong>, dan ikuti <strong>🎯 Quiz</strong> untuk melihat nilaimu!
+            </p>
+          </div>
+        </div>
+      </section>
       {/* Main Mode Buttons Grid */}
       <section className="space-y-4">
         <div className="flex items-center justify-between">
@@ -212,48 +252,6 @@ export const HomeView: React.FC<HomeViewProps> = ({ onSelectMode }) => {
               </p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* How to Use Section */}
-      <section className="bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-3xl p-6 sm:p-8 shadow-md">
-        <div className="flex items-center gap-2 mb-4">
-          <HelpCircle className="w-5 h-5 text-amber-400" />
-          <h3 className="text-lg sm:text-xl font-bold font-display text-white">
-            Cara Penggunaan (How to Use)
-          </h3>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
-          <div className="bg-white/10 rounded-2xl p-4 border border-white/10">
-            <div className="w-8 h-8 rounded-xl bg-amber-400 text-slate-900 font-black flex items-center justify-center mb-3">
-              1
-            </div>
-            <h4 className="font-bold text-white mb-1">Pelajari Ungkapan</h4>
-            <p className="text-slate-300 text-xs leading-relaxed">
-              Buka menu <strong>📚 Learn</strong> untuk melihat rumus kalimat perkenalan dan dengarkan cara pelafalan audionya.
-            </p>
-          </div>
-
-          <div className="bg-white/10 rounded-2xl p-4 border border-white/10">
-            <div className="w-8 h-8 rounded-xl bg-indigo-400 text-slate-900 font-black flex items-center justify-center mb-3">
-              2
-            </div>
-            <h4 className="font-bold text-white mb-1">Praktik Percakapan AI</h4>
-            <p className="text-slate-300 text-xs leading-relaxed">
-              Masuk ke <strong>💬 Conversation</strong> untuk mengobrol dengan Alex. Jawab satu per satu pertanyaan dalam bahasa Inggris.
-            </p>
-          </div>
-
-          <div className="bg-white/10 rounded-2xl p-4 border border-white/10">
-            <div className="w-8 h-8 rounded-xl bg-emerald-400 text-slate-900 font-black flex items-center justify-center mb-3">
-              3
-            </div>
-            <h4 className="font-bold text-white mb-1">Uji Pemahaman</h4>
-            <p className="text-slate-300 text-xs leading-relaxed">
-              Asah kemampuan di <strong>🧩 Vocabulary</strong>, <strong>✍️ Grammar</strong>, dan ikuti <strong>🎯 Quiz</strong> untuk melihat nilaimu!
-            </p>
-          </div>
         </div>
       </section>
     </div>
