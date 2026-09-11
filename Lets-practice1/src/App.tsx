@@ -70,7 +70,7 @@ export default function App() {
             English Buddy 👋 • Introducing & Meeting New People
           </p>
           <p className="text-slate-400">
-           Developed by Rahmi Sukmawidianto ❤️ Powered Google AI Studio Junior
+           Developed by Rahmi Sukmawidianto ❤️ Powered by Google AI Studio Junior
           </p>
         </div>
       </footer>
