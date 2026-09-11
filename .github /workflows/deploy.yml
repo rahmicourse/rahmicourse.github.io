@@ -1,19 +1,50 @@
+name: Deploy Lets Practice Grade 7
+
+on:
+  push:
+    branches: ["main"] # Pastikan branch utama Anda bernama main (jika master ganti ke master)
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       - name: Install dependencies
+        working-directory: ./Lets-practice1
         run: npm install
-        working-directory: ./Lets-practice1
 
-      - name: Build
+      - name: Build project
+        working-directory: ./Lets-practice1
         run: npm run build
-        working-directory: ./Lets-practice1
 
-      - name: Deploy
-        run: |
-          cp -r ./Lets-practice1/dist/* ./lets-practice/
-          touch ./lets-practice/.nojekyll
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './Lets-practice1/dist'
 
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
