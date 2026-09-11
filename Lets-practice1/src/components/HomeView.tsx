@@ -136,7 +136,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onSelectMode }) => {
         <div className="flex items-center gap-2 mb-4">
           <HelpCircle className="w-5 h-5 text-amber-400" />
           <h3 className="text-lg sm:text-xl font-bold font-display text-white">
-            Cara Penggunaan (How to Use)
+            Cara Penggunaan ( How to Use )
           </h3>
         </div>
 
