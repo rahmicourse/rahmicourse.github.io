@@ -1,126 +1,110 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="id">
 <head>
-<meta charset="utf-8">
-<title>Rahmi Portfolio</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<style>
-body {
-    margin: 0;
-    font-family: Arial;
-}
-
-/* HERO SECTION */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(44,62,80,0.9), rgba(44,62,80,0.9));
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 50px;
-    position: relative;
-}
-
-/* TEXT */
-.content {
-    max-width: 870px;
-}
-
-.content h1 {
-    font-size: 40px;
-}
-
-.content p {
-    line-height: 1.6;
-}
-
-/* BUTTON MENU */
-.menu-btn {
-    margin-top: 20px;
-}
-
-.menu-btn a {
-    display: inline-block;
-    margin: 5px;
-    padding: 10px 18px;
-    border: 2px solid white;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
-	
-}
-
-.menu-btn a:hover {
-    background: white;
-    color: #2c3e50;
-}
-.menu-btn {
-    display: flex;
-    flex-wrap: nowrap; /* ini yang bikin tidak turun */
-    gap: 10px;
-	overflow-x: auto;
-	}
-/* SOCIAL */
-.social {
-    margin-top: 20px;
-}
-
-.social a {
-    color: white;
-    font-size: 22px;
-    margin-right: 10px;
-}
-
-.social a:hover {
-    color: #3498db;
-}
-	/* FOTO DI KANAN */
-.photo {
-    position: absolute;
-    right: 60px;
-    bottom: 0;
-    width: 300px;
-    height: auto;
-}
-
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="English & Tech for Nusantara — platform pembelajaran Bahasa Inggris dan teknologi untuk siswa SMP.">
+  <title>English & Tech for Nusantara</title>
+  <link rel="preload" as="image" href="images/hero-banner.svg">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#home" aria-label="English & Tech for Nusantara">
+      <span class="brand-icon">📖</span>
+      <span>English &amp; Tech<br><small>for Nusantara</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <nav class="nav" aria-label="Navigasi utama">
+      <a class="active" href="#home">⌂ Home</a>
+      <a href="#materi">▣ Materi Ajar</a>
+      <a href="#resources">▣ Resources</a>
+      <a href="#gallery">◉ Gallery</a>
+      <a href="#about">● About</a>
+      <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search..."></label>
+    </nav>
+  </div>
+</header>
 
-<div class="hero">
-    <div class="content">
-        <p>Hello, I'm</p>
-        <h1>RAHMI SUKMAWIDIANTO</h1>
-        <p>English Teacher-Aspiring Developer</p>
-
-        <p>
-        As an English teacher, I am passionate about learning new things. 
-        I believe learning is a lifelong journey and it is never too late to grow. 
-        By learning coding, I sharpen my logical thinking to create meaningful impact.
-        </p>
-
-        <!-- BUTTON MENU -->
-        <div class="menu-btn">
-            <a href="#">Contact</a>
-            <a href="Lets-practice1/index.html">Let's Practice</a>
-            <a href="https://github.com/me50/rahmicourse/branches/yours" target="_blank">Python Problem Set</a>
-            <a href="mpi.html" target="_blank">Interactive Learning Media</a>
-			<a href="hhtp;//..../"target="_blank">AI_English Partner</a>
-        </div>
-
-        <!-- SOCIAL -->
-        <div class="social">
-            <a href="https://www.instagram.com/rahmi_sukmawidianto"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/sukmawidiantorahmi"><i class="fab fa-linkedin"></i></a>
-            <a href="https://web.facebook.com/rahmi.sukmawidianto"><i class="fab fa-facebook"></i></a>
-			<a href="https://www.youtube.com/@mr.rahmifamily3002/videos" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-
+<main id="home">
+  <section class="hero">
+    <img src="images/hero-banner.svg" alt="Ilustrasi siswa belajar Bahasa Inggris dan teknologi dengan latar Nusantara" class="hero-img">
+    <div class="hero-copy">
+      <p class="eyebrow">✨ Hi teachers, Hi students! Welcome to</p>
+      <h1>English &amp; Tech for Nusantara</h1>
+      <h2>Code the <span>Future.</span><br>Speak to the World.</h2>
+      <p>Platform belajar interaktif untuk mengembangkan Bahasa Inggris dan teknologi, dengan konteks yang dekat dengan siswa Indonesia.</p>
+      <a class="primary-btn" href="#materi">Mulai Belajar →</a>
     </div>
-	<img class="photo" src="https://raw.githubusercontent.com/rahmicourse/rahmicourse.github.io/main/images/fotoku%20transparan.png">
-</div>
+  </section>
 
+  <section class="teacher-card container" id="about">
+    <img src="images/teacher-avatar.svg" alt="Ilustrasi guru Bahasa Inggris" class="avatar">
+    <div class="teacher-info">
+      <h3>Hi, I'm Your English Teacher</h3>
+      <p>English Teacher | Educator | Lifelong Learner</p>
+      <blockquote>“Better English, Bigger Dreams,<br>Brighter Future.”</blockquote>
+    </div>
+    <div class="connect">
+      <h3>Let's Connect</h3>
+      <div class="socials">
+        <a href="#" aria-label="YouTube">▶</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="X">𝕏</a><a href="#" aria-label="LinkedIn">in</a><a href="mailto:teacher@english-tech.id" aria-label="Email">✉</a>
+      </div>
+    </div>
+    <div class="contact">
+      <p>⌖ SMP (Junior High School)</p>
+      <p>✉ teacher@english-tech.id</p>
+      <p>◎ www.english-tech.id</p>
+      <p>♥ Passion: Teaching, Technology,<br>&nbsp;&nbsp;Travel, Reading</p>
+    </div>
+    <a class="detail-btn" href="#resources">Detail →</a>
+  </section>
+
+  <section class="section container" id="materi">
+    <div class="section-heading"><h2>📖 <span>Materi Ajar</span></h2><p>Explore and learn English with fun and meaningful content!</p></div>
+    <div class="cards four">
+      <article class="lesson-card blue"><div class="lesson-icon">📝</div><h3>Descriptive Text</h3><p>Describe people, places, things, and experiences in detail.</p><a href="#" class="card-btn">Learn More →</a></article>
+      <article class="lesson-card yellow"><div class="lesson-icon">👨‍🍳</div><h3>Procedure Text</h3><p>Follow steps, get things done with clear instructions.</p><a href="#" class="card-btn">Learn More →</a></article>
+      <article class="lesson-card purple"><div class="lesson-icon">📚</div><h3>Recount Text</h3><p>Share your past experiences in a meaningful way.</p><a href="#" class="card-btn">Learn More →</a></article>
+      <article class="lesson-card green"><div class="lesson-icon">🔎</div><h3>Report Text</h3><p>Present facts and information about the world around us.</p><a href="#" class="card-btn">Learn More →</a></article>
+    </div>
+  </section>
+
+  <section class="section container" id="resources">
+    <div class="section-heading"><h2>🧰 <span>Resources</span></h2><p>Everything you need to teach English creatively.</p></div>
+    <div class="cards six">
+      <article class="resource-card blue"><b>📘</b><h3>Lesson Plan</h3><p>Modul ajar, ATP, dan rancangan pembelajaran.</p><a href="#">View More →</a></article>
+      <article class="resource-card green"><b>📋</b><h3>LKPD</h3><p>Lembar kerja peserta didik siap pakai dan printable.</p><a href="#">View More →</a></article>
+      <article class="resource-card pink"><b>☑</b><h3>Assessment</h3><p>Rubrik, kisi-kisi, soal, dan instrumen penilaian.</p><a href="#">View More →</a></article>
+      <article class="resource-card purple"><b>🖼</b><h3>Teaching Media</h3><p>PPT, gambar, flashcard, poster, dan media belajar.</p><a href="#">View More →</a></article>
+      <article class="resource-card orange"><b>💡</b><h3>Teaching Ideas</h3><p>Ice breaker, games, project ideas, aktivitas kreatif.</p><a href="#">View More →</a></article>
+      <article class="resource-card cyan"><b>⬇</b><h3>Download Center</h3><p>Berbagai file pembelajaran dalam satu tempat.</p><a href="#">View More →</a></article>
+    </div>
+  </section>
+
+  <section class="section container" id="gallery">
+    <div class="section-heading"><h2>▧ <span>Gallery Foto</span></h2><p>Moments, activities, and our learning journey together.</p></div>
+    <div class="gallery">
+      <img src="images/gallery-1.svg" alt="Kegiatan belajar di kelas">
+      <img src="images/gallery-2.svg" alt="Kegiatan pembelajaran di luar kelas">
+      <img src="images/gallery-3.svg" alt="Pembelajaran digital">
+      <img src="images/gallery-4.svg" alt="Proyek kelompok siswa">
+      <img src="images/gallery-5.svg" alt="Aktivitas coding">
+      <img src="images/gallery-6.svg" alt="Latihan Bahasa Inggris">
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="brand footer-brand"><span class="brand-icon">📖</span><span>English &amp; Tech<br><small>for Nusantara</small></span></div>
+    <div class="footer-social">Developed by Rahmi Sukmawidianto│　© 2026 English &amp; Tech for Nusantara.<br><small>All rights reserved.</small></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
 </body>
 </html>
