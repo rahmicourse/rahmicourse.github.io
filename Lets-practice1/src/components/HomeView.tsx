@@ -131,7 +131,8 @@ export const HomeView: React.FC<HomeViewProps> = ({ onSelectMode }) => {
 
       {/* Safety Notice */}
       <PrivacyBanner />
- {/* How to Use Section */}
+      
+ {/* How to Use Section asalnya dibawah */}
       <section className="bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-3xl p-6 sm:p-8 shadow-md">
         <div className="flex items-center gap-2 mb-4">
           <HelpCircle className="w-5 h-5 text-amber-400" />
