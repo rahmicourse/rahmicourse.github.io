@@ -140,7 +140,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ onSelectMode }) => {
             Cara Penggunaan ( How to Use )
           </h3>
         </div>
-
+<h1 style={{color:"red"}}>
+TEST RAHMI 123
+</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
           <div className="bg-white/10 rounded-2xl p-4 border border-white/10">
             <div className="w-8 h-8 rounded-xl bg-amber-400 text-slate-900 font-black flex items-center justify-center mb-3">
