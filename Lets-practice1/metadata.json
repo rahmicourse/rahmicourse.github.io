@@ -1,9 +1,6 @@
 {
-  "name": "English Buddy – Introducing & Meeting New People",
-  "description": "An interactive educational English learning chatbot for Indonesian Grade 7 students to practice introducing themselves and meeting new people.",
+  "name": "ES TEH Nusantara | Grade 7",
+  "description": "English and Technology for Nusantara - Modern Grade 7 English learning web application focusing on Introducing Myself (Self Introduction).",
   "requestFramePermissions": [],
-  "majorCapabilities": [
-    "CLIENT_SIDE_LEARNING",
-    "BROWSER_TEXT_TO_SPEECH"
-  ]
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -1,92 +1,135 @@
-export type AppMode = 'home' | 'learn' | 'conversation' | 'vocabulary' | 'grammar' | 'quiz';
-
-export interface LearnExpression {
+export interface LessonTopic {
   id: string;
-  topic: string;
-  topicId: string;
-  icon: string;
-  expressions: {
-    en: string;
-    idMeaning: string;
-    audioText?: string;
-  }[];
-  questions: {
-    en: string;
-    idMeaning: string;
-    audioText?: string;
-  }[];
-  explanationId: string;
-  grammarTip: string;
-  dialogue: {
-    speakerA: string;
-    textA: string;
-    speakerB: string;
-    textB: string;
-  };
-  quickPractice: {
-    prompt: string;
+  emoji: string;
+  title: string;
+  indonesianTitle: string;
+  explanation: string;
+  indonesianExplanation: string;
+  examples: Array<{
+    english: string;
+    indonesian: string;
+  }>;
+  vocabulary: Array<{
+    word: string;
+    meaning: string;
+    partOfSpeech?: string;
+  }>;
+  pronunciationTips: string;
+}
+
+export interface GrammarItem {
+  id: string;
+  title: string;
+  category: 'pronouns' | 'tobe' | 'havehas';
+  explanation: string;
+  formula?: string;
+  rules: Array<{
+    subject: string;
+    verbOrForm: string;
+    example: string;
+    note?: string;
+  }>;
+  practiceSentence: {
+    question: string;
     options: string[];
     correctAnswer: string;
     explanation: string;
   };
 }
 
+export interface GalangProfile {
+  name: string;
+  age: string;
+  origin: string;
+  city: string;
+  school: string;
+  hobby: string;
+  siblings: string;
+  personality: string[];
+  bio: string;
+}
+
 export interface ChatMessage {
   id: string;
-  sender: 'bot' | 'user';
+  sender: 'galang' | 'student';
   text: string;
-  correctionNote?: string | null;
-  hint?: string | null;
   timestamp: number;
+  followUpPrompt?: string;
+  isSummary?: boolean;
+  summaryData?: {
+    name: string;
+    age: string;
+    school: string;
+    hobby: string;
+    family: string;
+  };
+  isAiGlitch?: boolean;
+  glitchNote?: string;
 }
 
-export interface ConversationFeedback {
-  whatYouDidWell: string;
-  vocabularyToImprove: string;
-  grammarToImprove: string;
-  recommendedSentence: string;
-}
-
-export interface VocabularyItem {
+export interface VocabMatchPair {
   id: string;
-  word: string;
+  english: string;
   indonesian: string;
   category: string;
-  exampleEn: string;
-  exampleId: string;
-  phonetic?: string;
 }
 
-export interface GrammarQuestion {
-  id: number;
-  topic: string;
-  question: string;
-  instruction: string;
-  options: string[];
-  correctAnswer: string;
-  explanationEn: string;
-  explanationId: string;
+export interface UnscrambleWord {
+  id: string;
+  scrambled: string;
+  correct: string;
+  hint: string;
+  indonesianHint: string;
+}
+
+export interface SentenceBuilderItem {
+  id: string;
+  scrambledTokens: string[];
+  correctSentence: string;
+  translation: string;
 }
 
 export interface QuizQuestion {
   id: number;
-  category: 'vocabulary' | 'grammar' | 'expressions' | 'dialogue' | 'reading';
-  categoryLabel: string;
-  type: 'mcq' | 'short_answer';
-  context?: string;
+  topic: 'Self Introduction' | 'Pronouns' | 'To Be' | 'Have/Has' | 'Vocabulary';
   question: string;
-  options?: string[];
-  correctAnswer: string;
-  acceptableAnswers?: string[];
+  options: string[];
+  correctIndex: number;
   explanation: string;
-  hint: string;
 }
 
-export interface QuizResult {
-  score: number;
-  total: number;
-  percentage: number;
-  excellentAreas: string[];
-  areasToImprove: string[];
-  recommendedPractice: string[];
+export interface AchievementBadge {
+  id: 'beginner' | 'communicator' | 'explorer' | 'master';
+  name: string;
+  tier: 'bronze' | 'silver' | 'gold' | 'master';
+  icon: string;
+  description: string;
+  requirement: string;
+  unlocked: boolean;
+  unlockedAt?: string;
+}
+
+export interface UserProgress {
+  viewedLessons: string[];
+  completedConversation: boolean;
+  conversationSummary?: {
+    name: string;
+    age: string;
+    school: string;
+    hobby: string;
+    family: string;
+  };
+  gamesCompleted: {
+    matchVocab: boolean;
+    wordUnscramble: boolean;
+    sentenceBuilder: boolean;
+  };
+  highScores: {
+    matchVocab: number;
+    wordUnscramble: number;
+    sentenceBuilder: number;
+  };
+  quizBestScore: number;
+  quizCompletedCount: number;
+  achievements: Record<string, boolean>;
 }
