@@ -13,11 +13,11 @@ jobs:
       - name: Install and Build
         run: |
           cd Lets-practice1
-          bun install # Ganti menjadi 'npm install' jika Anda menggunakan npm
-          bun run build # Ganti menjadi 'npm run build' jika Anda menggunakan npm
+          npm install # Ganti menjadi 'npm install' jika Anda menggunakan npm
+          npm run build # Ganti menjadi 'npm run build' jika Anda menggunakan npm
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./Lets-practice1 # Sesuaikan folder hasil build Anda (biasanya 'dist' atau 'build')
+          publish_dir: ./Lets-practice1/dist # Sesuaikan folder hasil build Anda (biasanya 'dist' atau 'build')
