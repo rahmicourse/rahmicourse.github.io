@@ -1,0 +1,23 @@
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: [ main ] # Ganti menjadi 'master' jika branch utama Anda bernama master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install and Build
+        run: |
+          cd Lets-practice1
+          bun install # Ganti menjadi 'npm install' jika Anda menggunakan npm
+          bun run build # Ganti menjadi 'npm run build' jika Anda menggunakan npm
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./Lets-practice1/dist # Sesuaikan folder hasil build Anda (biasanya 'dist' atau 'build')
