@@ -1,0 +1,6 @@
+{
+  "name": "ES TEH Nusantara | Grade 7",
+  "description": "English and Technology for Nusantara - Modern Grade 7 English learning web application focusing on Introducing Myself (Self Introduction).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
