@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Fredoka', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Duolingo / Ruangguru 3D pressable button effect */
+.btn-3d-green {
+  box-shadow: 0 4px 0 #15803d;
+  transition: all 0.1s ease;
+}
+.btn-3d-green:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #15803d;
+}
+
+.btn-3d-blue {
+  box-shadow: 0 4px 0 #1d4ed8;
+  transition: all 0.1s ease;
+}
+.btn-3d-blue:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #1d4ed8;
+}
+
+.btn-3d-orange {
+  box-shadow: 0 4px 0 #c2410c;
+  transition: all 0.1s ease;
+}
+.btn-3d-orange:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #c2410c;
+}
