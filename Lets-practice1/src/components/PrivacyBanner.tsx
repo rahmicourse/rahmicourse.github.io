@@ -15,7 +15,7 @@ export const PrivacyBanner: React.FC = () => {
           </span>
         </h4>
         <p className="mt-1 text-amber-800 leading-relaxed">
-         Anak-anak, silakan gunakan AI sebagai teman diskusi atau alat bantu belajar untuk mencari ide. Tapi ingat, jangan biarkan AI yang berpikir untuk kalian. Tulisan dan ide aslinya tetap harus dari kepala kalian sendiri, karena kemampuan berpikir kritis kalianlah yang sedang kita bangun di sekolah 🌟
+          Jangan pernah membagikan <strong>alamat rumah asli</strong>, <strong>nomor HP</strong>, atau <strong>kata sandi</strong>. Saat latihan menyebutkan alamat, gunakan nama jalan fiktif / khayalan seperti <code className="bg-amber-100/90 px-1.5 py-0.5 rounded font-mono text-[11px] font-bold">"Jl. Merdeka No. 10"</code> atau <code className="bg-amber-100/90 px-1.5 py-0.5 rounded font-mono text-[11px] font-bold">"Jl. Bintang No. 5"</code>! 🌟
         </p>
       </div>
     </div>
