@@ -6,8 +6,20 @@ const exists=(key,n=st.meeting)=>key==='rptm'&&n===1||['rpp','lk','rubrik'].incl
 const m=()=>H.meetings[st.meeting-1];const frames=()=>m().stages.flatMap((s,si)=>s.frames.map((f,fi)=>({...f,si,fi,stage:s.title,duration:s.duration})));
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function navigate(page,opts={}){st.history.push({page:st.page,meeting:st.meeting,tab:st.tab,frame:st.frame});Object.assign(st,{page,...opts});st.full=false;document.body.classList.remove('full');render();window.scrollTo(0,0)}
-function goMeeting(n){navigate('meeting',{meeting:n,tab:'agenda',frame:0})}
-function tab(t){st.tab=t;render()}
+function goMeeting(n){
+  navigate('meeting',{
+    meeting:n,
+    tab:'agenda',
+    frame:n===2?-1:0
+  });
+}
+function tab(t){
+  st.tab=t;
+  if(t==='agenda' && st.meeting===2){
+    st.frame=-1;
+  }
+  render();
+}
 function setFrame(i){st.frame=Math.max(0,Math.min(frames().length-1,i));st.tab='agenda';render()}
 function goBack(){const x=st.history.pop();if(x){Object.assign(st,x);render()}else navigate('dashboard')}
 function toast(t){const el=document.getElementById('toast');el.textContent=t;el.style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.style.display='none',3000)}
@@ -21,7 +33,54 @@ function dashboard(){return layout('Dashboard 10 Pertemuan',`<h1 class="section-
 function generic(){let title={program:'Tentang Program',files:'Perangkat Program',media:'Bahan & Media',library:'LK & Rubrik',downloads:'Pusat Unduhan',references:'Referensi'}[st.page];let inner='';if(st.page==='program')inner=`<p>Program Pengembangan Kompetensi Guru Sekolah Dasar Mengajar Bahasa Inggris (PKGSD-MBI).</p><p>Dokumen kebijakan dan silabus dapat dibuka pada menu Perangkat Program setelah file ditambahkan.</p>`;else if(st.page==='files')inner=H.programFiles.map(f=>fileCard(f.label,f.path,false)).join('');else if(st.page==='references')inner='<p>Tambahkan daftar referensi resmi program di sini. Belum ada referensi yang diunggah.</p>';else inner=H.meetings.map(x=>`<div class="card" style="margin-bottom:12px"><b>Pertemuan ${x.number} — ${esc(x.title)}</b><div class="buttonrow">${(st.page==='media'?['audio','gambar']:st.page==='library'?['lk','rubrik']:['rptm','rpp','lk','rubrik']).map(k=>`<button class="btn" onclick="goMeeting(${x.number});tab('${k}')">${tabs.find(t=>t[0]===k)?.[1]}</button>`).join('')}</div></div>`).join('');return layout(title,`<h1 class="section-title">${title}</h1>${inner}`)}
 function fileCard(label,path,available){return `<div class="card" style="margin:10px 0"><h2>📄 ${esc(label)}</h2>${available?`<div class="buttonrow"><a class="btn primary" href="${path}" target="_blank" rel="noopener">Buka File</a><a class="btn" href="${path}" download>Unduh</a><button class="btn" onclick="copyLink('${path}')">Salin Tautan</button></div>`:`<p class="muted">Belum diunggah. Letakkan file di <code>${esc(path)}</code>.</p>`}</div>`}
 function docView(){let t=st.tab,n=st.meeting;let file=t==='kebijakan'?H.programFiles[0]:t==='materi'?null:t==='rptm'||t==='rpp'||t==='lk'||t==='rubrik'||t==='audio'||t==='gambar'?{label:tabs.find(x=>x[0]===t)[1],path:H.files[t](n)}:null;let available=t==='kebijakan'?false:exists(t,n);if(t==='materi')return `<h2>Materi dan Media</h2><p>Materi Pertemuan ${n}: ${esc(m().title)}.</p><div class="buttonrow">${tabs.filter(x=>['rptm','rpp','lk','audio','gambar'].includes(x[0])).map(x=>`<button class="btn" onclick="tab('${x[0]}')">${x[1]}</button>`).join('')}</div><div class="note">Unggah materi resmi untuk menampilkan isi pembelajaran yang lengkap.</div>`;if(t==='agenda')return `<h2>Agenda Pertemuan ${n}</h2>${m().stages.length?`<div class="stages">${m().stages.map((s,i)=>`<div class="card" style="margin-bottom:10px"><h2>Tahap ${i+1} — ${esc(s.title)} <small>(${s.duration})</small></h2>${s.frames.map(f=>`<p>• ${esc(f.title)}</p>`).join('')}</div>`).join('')}</div>`:'<div class="empty"><div class="big">📅</div>Agenda menunggu RPTM resmi.</div>'}`;if(!file)return `<div class="empty">Bahan belum ditetapkan.</div>`;if(!available)return `<div class="empty"><div class="big">📂</div><h2>${esc(file.label)} belum diunggah</h2><p>Tambahkan file di <code>${esc(file.path)}</code></p></div>`;if(t==='rptm')return `<iframe title="RPTM Pertemuan ${n}" src="${file.path}#toolbar=1&navpanes=1"></iframe>`;if(t==='gambar')return `<img class="media" src="${file.path}" alt="Gambar pembelajaran">`;if(t==='audio')return `<audio controls src="${file.path}"></audio>`;return `<div class="empty"><div class="big">📄</div><h2>${esc(file.label)} Pertemuan ${n}</h2><p>File Word asli tersedia untuk dibuka atau diunduh.</p><p>Browser tidak selalu dapat menampilkan DOCX langsung. Gunakan tombol Unduh atau Buka File.</p></div>`}
-function meeting(){let f=frames(),current=f[st.frame],n=st.meeting,docPath=['rptm','rpp','lk','rubrik','audio','gambar'].includes(st.tab)?H.files[st.tab](n):null,available=exists(st.tab,n);let stageHTML=m().stages.map((s,i)=>`<h4>Tahap ${i+1} — ${esc(s.title)} <small>${s.duration}</small></h4>${s.frames.map((x,j)=>{let k=m().stages.slice(0,i).reduce((a,v)=>a+v.frames.length,0)+j;return `<button onclick="setFrame(${k})" style="${st.frame===k?'background:#ffed8b':''}">${k+1}. ${esc(x.title)}</button>`}).join('')}`).join('');let display=st.tab==='agenda'&&current?`<div class="framebody"><span class="tag">Tahap ${current.si+1} · ${current.duration}</span><h2>${esc(current.title)}</h2><p>${esc(current.desc)}</p>${current.question?`<div class="question"><b>Pertanyaan fasilitator</b><br>${esc(current.question)}</div>`:''}<button class="btn yellow" onclick="tab('${current.material}')">Buka Bahan Terkait → ${esc(tabs.find(x=>x[0]===current.material)?.[1]||'Materi')}</button></div>`:docView();return layout(`Pertemuan ${n} ❯ ${tabs.find(x=>x[0]===st.tab)?.[1]}`,`<div class="tabs">${tabs.map(([key,label])=>`<button class="tab ${st.tab===key?'active':''}" onclick="tab('${key}')">${ICON[key]||'▣'} ${label}</button>`).join('')}</div><div class="workarea"><div class="docbox"><div class="doctitle">${st.tab==='agenda'?'📘 Agenda dan Aktivitas':st.tab==='rptm'?'📕 Rencana Pertemuan Tatap Muka':st.tab==='rpp'?'📕 Rencana Pembelajaran (RPP)':`📄 ${tabs.find(x=>x[0]===st.tab)?.[1]}`} — Pertemuan ${n}</div><div class="docbody">${display}</div></div><aside><div class="asidecard"><h3>Aksi Cepat</h3><div class="quick">${docPath&&available?`<a class="btn" href="${docPath}" download>⇩ Unduh</a><button onclick="copyLink('${docPath}')">🔗 Salin Tautan</button>`:`<button onclick="tab('rptm')">📄 RPTM</button><button onclick="tab('lk')">📄 LK</button>`}<button onclick="showQR()">▦ Bagikan QR</button><button onclick="window.print()">▣ Cetak</button></div></div><div class="asidecard"><h3>Daftar Isi / Quick Jump</h3><div class="stages">${stageHTML||'<p>Menunggu bahan resmi.</p>'}</div></div></aside></div><div class="bottom"><button class="btn primary" onclick="navigate('dashboard')">⌂ Home</button><button class="btn" onclick="setFrame(${st.frame-1})" ${!f.length||st.frame===0?'disabled':''}>❮ Sebelumnya</button><select aria-label="Pilih bagian" onchange="setFrame(Number(this.value))">${f.map((x,i)=>`<option value="${i}" ${i===st.frame?'selected':''}>${i+1}. ${esc(x.title)}</option>`).join('')||'<option>Belum tersedia</option>'}</select><button class="btn primary" onclick="setFrame(${st.frame+1})" ${!f.length||st.frame===f.length-1?'disabled':''}>Berikutnya ❯</button><span class="tag">${f.length?st.frame+1:0} / ${f.length}</span><button class="btn" onclick="toggleFull()">${st.full?'Keluar PID':'⛶ PID Fullscreen'}</button><button class="btn" onclick="goBack()">↩ Kembali</button></div>`)}
+
+function agendaRingkasan() {
+  const n = st.meeting;
+  const stages = m().stages;
+
+  const times = n === 2
+    ? ["13.00–13.20", "13.20–14.10", "14.10–16.00"]
+    : [];
+
+  const descriptions = n === 2
+    ? [
+        "Menghubungkan pembelajaran mandiri Ruang GTK, mengamati stimulus, mendiskusikan CP–TP, dan mengerjakan LK 2.",
+        "Fasilitator memperagakan pembelajaran Alphabet, Self-Introduction, Numbers and Age sesuai urutan RPTM.",
+        "Persiapan praktik, microteaching kelompok, peer feedback, dan refleksi sesuai petunjuk RPTM."
+      ]
+    : [];
+
+  return `
+    <div class="agenda-summary">
+      <h2>Alur Fasilitasi 13.00–16.00</h2>
+      <p><strong>180 menit</strong></p>
+
+      ${stages.map((s, i) => {
+        const firstFrame = stages
+          .slice(0, i)
+          .reduce((total, stage) => total + stage.frames.length, 0);
+
+        return `
+          <div class="card" style="margin-bottom:16px;padding:20px">
+            <h2>${i + 1}. ${esc(s.title)}</h2>
+            <p><strong>${esc(s.duration)}</strong></p>
+            <p>${esc(times[i] || "")}</p>
+            <p>${esc(descriptions[i] || "")}</p>
+
+            <button class="btn primary"
+              onclick="setFrame(${firstFrame})">
+              Buka Aktivitas →
+            </button>
+          </div>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function meeting(){let f=frames(),current=f[st.frame],n=st.meeting,docPath=['rptm','rpp','lk','rubrik','audio','gambar'].includes(st.tab)?H.files[st.tab](n):null,available=exists(st.tab,n);let stageHTML=m().stages.map((s,i)=>`<h4>Tahap ${i+1} — ${esc(s.title)} <small>${s.duration}</small></h4>${s.frames.map((x,j)=>{let k=m().stages.slice(0,i).reduce((a,v)=>a+v.frames.length,0)+j;return `<button onclick="setFrame(${k})" style="${st.frame===k?'background:#ffed8b':''}">${k+1}. ${esc(x.title)}</button>`}).join('')}`).join('');let display=st.tab==='agenda'&&st.meeting===2&&st.frame===-1
+  ? agendaRingkasan()
+  : st.tab==='agenda'&&current?`<div class="framebody"><span class="tag">Tahap ${current.si+1} · ${current.duration}</span><h2>${esc(current.title)}</h2><p>${esc(current.desc)}</p>${current.question?`<div class="question"><b>Pertanyaan fasilitator</b><br>${esc(current.question)}</div>`:''}<button class="btn yellow" onclick="tab('${current.material}')">Buka Bahan Terkait → ${esc(tabs.find(x=>x[0]===current.material)?.[1]||'Materi')}</button></div>`:docView();return layout(`Pertemuan ${n} ❯ ${tabs.find(x=>x[0]===st.tab)?.[1]}`,`<div class="tabs">${tabs.map(([key,label])=>`<button class="tab ${st.tab===key?'active':''}" onclick="tab('${key}')">${ICON[key]||'▣'} ${label}</button>`).join('')}</div><div class="workarea"><div class="docbox"><div class="doctitle">${st.tab==='agenda'?'📘 Agenda dan Aktivitas':st.tab==='rptm'?'📕 Rencana Pertemuan Tatap Muka':st.tab==='rpp'?'📕 Rencana Pembelajaran (RPP)':`📄 ${tabs.find(x=>x[0]===st.tab)?.[1]}`} — Pertemuan ${n}</div><div class="docbody">${display}</div></div><aside><div class="asidecard"><h3>Aksi Cepat</h3><div class="quick">${docPath&&available?`<a class="btn" href="${docPath}" download>⇩ Unduh</a><button onclick="copyLink('${docPath}')">🔗 Salin Tautan</button>`:`<button onclick="tab('rptm')">📄 RPTM</button><button onclick="tab('lk')">📄 LK</button>`}<button onclick="showQR()">▦ Bagikan QR</button><button onclick="window.print()">▣ Cetak</button></div></div><div class="asidecard"><h3>Daftar Isi / Quick Jump</h3><div class="stages">${stageHTML||'<p>Menunggu bahan resmi.</p>'}</div></div></aside></div><div class="bottom"><button class="btn primary" onclick="navigate('dashboard')">⌂ Home</button><button class="btn" onclick="setFrame(${st.frame-1})" ${!f.length||st.frame===0?'disabled':''}>❮ Sebelumnya</button><select aria-label="Pilih bagian" onchange="setFrame(Number(this.value))">${f.map((x,i)=>`<option value="${i}" ${i===st.frame?'selected':''}>${i+1}. ${esc(x.title)}</option>`).join('')||'<option>Belum tersedia</option>'}</select><button class="btn primary" onclick="setFrame(${st.frame+1})" ${!f.length||st.frame===f.length-1?'disabled':''}>Berikutnya ❯</button><span class="tag">${f.length?st.frame+1:0} / ${f.length}</span><button class="btn" onclick="toggleFull()">${st.full?'Keluar PID':'⛶ PID Fullscreen'}</button><button class="btn" onclick="goBack()">↩ Kembali</button></div>`)}
 function showQR(){const path=st.tab==='lk'?H.files.lk(st.meeting):st.tab==='rptm'?H.files.rptm(st.meeting):st.tab==='rpp'?H.files.rpp(st.meeting):st.tab==='rubrik'?H.files.rubrik(st.meeting):H.files.lk(st.meeting);if(!['lk','rptm','rpp','rubrik'].some(k=>H.files[k](st.meeting)===path&&exists(k,st.meeting))){toast('File belum tersedia untuk dibagikan');return}const url=new URL(path,location.href).href;const qr=document.getElementById('qrmodal');qr.innerHTML=`<div class="card" style="max-width:420px;margin:12vh auto;text-align:center"><h2>Bagikan Bahan</h2><img src="${path===H.files.lk(1)?'assets/qr-lk1.png':path===H.files.rpp(1)?'assets/qr-rpp1.png':path===H.files.rubrik(1)?'assets/qr-rubrik1.png':'assets/qr-rptm1.png'}" alt="QR unduhan" style="width:230px;max-width:100%"><p style="overflow-wrap:anywhere;font-size:13px">${esc(url)}</p><button class="btn primary" onclick="copyLink('${path}')">Salin Tautan</button> <button class="btn" onclick="document.getElementById('qrmodal').remove()">Tutup</button></div>`;qr.style.display='block'}
 function render(){let html=st.page==='landing'?landing():st.page==='profile'?profile():st.page==='dashboard'?dashboard():st.page==='meeting'?meeting():generic();app.innerHTML=html;const old=document.getElementById('qrmodal');if(old)old.remove();let qr=document.createElement('div');qr.id='qrmodal';qr.style.cssText='display:none;position:fixed;inset:0;background:#001b498c;z-index:50;padding:12px';qr.addEventListener('click',e=>{if(e.target===qr)qr.remove()});document.body.appendChild(qr)}
 window.addEventListener('keydown',e=>{if(st.page==='meeting'&&['ArrowRight','ArrowLeft'].includes(e.key)&&!['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();setFrame(st.frame+(e.key==='ArrowRight'?1:-1))}if(e.key==='Escape'&&st.full)toggleFull()});
