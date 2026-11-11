@@ -14,3 +14,57 @@ window.HUB = {
  ]:[]})),
  files:{rptm:n=>`files/rptm/rptm-${n}.pdf`,rpp:n=>`files/rpp/rpp-${n}.docx`,lk:n=>`files/lk/lk-${n}.docx`,rubrik:n=>`files/rubrik/rubrik-${n}.docx`,audio:n=>`files/audio/audio-${n}.mp3`,gambar:n=>`files/gambar/gambar-${n}.png`}
 };
+
+/* AGENDA PERTEMUAN 2 — MY SELF */
+window.HUB.meetings[1].title = "My Self";
+
+window.HUB.meetings[1].stages = [
+  {
+    title: "Analisis CP dan Alur Pembelajaran",
+    duration: "20 menit",
+    frames: [
+      {
+        title: "Analisis CP dan Alur Pembelajaran",
+        desc: "13.00–13.20 | Menghubungkan pembelajaran mandiri Ruang GTK, mengamati stimulus, mendiskusikan CP–TP, dan mengerjakan LK 2.",
+        material: "lk"
+      }
+    ]
+  },
+  {
+    title: "Modelling",
+    duration: "50 menit",
+    frames: [
+      {
+        title: "Pembelajaran My Self",
+        desc: "13.20–14.10 | Fasilitator memperagakan pembelajaran Alphabet, Self-Introduction, Numbers and Age sesuai urutan RPTM.",
+        material: "materi"
+      }
+    ]
+  },
+  {
+    title: "Praktik Pembelajaran",
+    duration: "110 menit",
+    frames: [
+      {
+        title: "Persiapan Praktik",
+        desc: "14.10–16.00 | Peserta menyiapkan media, kegiatan, dan pembagian peran.",
+        material: "rptm"
+      },
+      {
+        title: "Microteaching",
+        desc: "Peserta melaksanakan praktik mengajar secara berkelompok sesuai petunjuk RPTM.",
+        material: "materi"
+      },
+      {
+        title: "Peer Feedback",
+        desc: "Peserta mengamati praktik dan memberikan catatan perbaikan.",
+        material: "rubrik"
+      },
+      {
+        title: "Refleksi",
+        desc: "Peserta merefleksikan praktik dan menyusun tindak lanjut.",
+        material: "agenda"
+      }
+    ]
+  }
+];
