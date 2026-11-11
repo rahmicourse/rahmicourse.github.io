@@ -1,1 +1,126 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teaching Media | Rahmi Course</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f6fc;
+  color: #183153;
+}
+header {
+  background: #153b70;
+  color: white;
+  text-align: center;
+  padding: 45px 20px;
+}
+header h1 { margin: 10px 0; }
+main {
+  max-width: 1050px;
+  margin: 30px auto;
+  padding: 15px;
+}
+.card {
+  background: white;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #00000010;
+}
+h2 { color: #173b70; }
+.game {
+  background: #eff6ff;
+  padding: 18px;
+  margin-top: 12px;
+  border-radius: 10px;
+}
+.game a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: bold;
+}
+.soon {
+  background: #f4f5f7;
+  color: #777;
+}
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+@media(max-width:600px) {
+  .media-grid { grid-template-columns: 1fr; }
+}
+.back {
+  display: inline-block;
+  margin: 20px 0;
+  color: #2563eb;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <p>RAHMI COURSE</p>
+  <h1>Teaching Media</h1>
+  <p>Explore Interactive English Learning Resources</p>
+</header>
+
+<main>
+
+<section class="card">
+  <h2>🎮 Interactive Games</h2>
+
+  <div class="game">
+    <h3>1. Greeting and Parting</h3>
+    <p>Camera-based English Action Game</p>
+    <a href="games/greeting/">
+      Play Game →
+    </a>
+  </div>
+
+  <div class="game soon">
+    <h3>2. Introducing Myself</h3>
+    <p>Coming Soon</p>
+  </div>
+
+</section>
+
+<div class="media-grid">
+
+  <section class="card">
+    <h2>🖼 Interactive Flashcards</h2>
+    <p>Vocabulary and Pictures</p>
+  </section>
+
+  <section class="card">
+    <h2>🎧 Listening & Speaking</h2>
+    <p>Pronunciation Practice</p>
+  </section>
+
+  <section class="card">
+    <h2>📖 Digital Storytelling</h2>
+    <p>Interactive English Stories</p>
+  </section>
+
+  <section class="card">
+    <h2>📝 Interactive Quizzes</h2>
+    <p>English Exercises</p>
+  </section>
+
+</div>
+
+<a class="back" href="../index.html">
+  ← Back to Home
+</a>
+
+</main>
+</body>
+</html>
