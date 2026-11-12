@@ -89,20 +89,20 @@ function rptmLinkPertemuan2() {
     {
       judul: "Tahap 1 — Analisis Pembelajaran",
       links: [
-        ["Link 1", ""],
-        ["Link 2", ""],
-        ["Link 3", ""]
+        ["Refleksi RGTK","https://drive.google.com/file/d/1VG93MlsYeRBfmOQjN4feaNKHGx5OF6VO/view?usp=sharing"],
+        ["Analisa CP TP","https://drive.google.com/drive/u/0/folders/1okLFC1Y96iF1VTWGLX8TtbWni-W_hXWn"],
+        ["Pendekatan Pembelajarn","https://drive.google.com/drive/u/0/folders/1okLFC1Y96iF1VTWGLX8TtbWni-W_hXWn"]
       ]
     },
     {
       judul: "Tahap 2 — Modelling",
       links: [
-        ["Activity 1", ""],
-        ["Activity 2", ""],
-        ["Activity 3", ""],
-        ["Activity 4", ""],
+        ["Activity 1-Lets get ready", "https://drive.google.com/file/d/1QDKqiBq-cVMgPOtQwiFNT6-h42DezSqu/view?usp=sharing"],
+        ["Activity 2-Look and Answer & Listen ", "https://drive.google.com/file/d/1QsPSeLBTq7jwpdk7qyX_lwIFMGMrk1S9/view?usp=sharing"],
+        ["Activity 3", "https://drive.google.com/file/d/1nC4rU2nWfthpGdfWRXE-H88QHEmLVRT2/view?usp=sharing"],
+        ["Activity 4-Sing", "https://youtu.be/0kMUybkY3oc?si=01fUvMXE0b9UgCsu"],
         ["Activity 5", ""],
-        ["Activity 6", ""]
+        ["Activity 6", "https://drive.google.com/file/d/1aa1K9-knH4sNpr-83FhtkWUGH8K4ZRBp/view?usp=sharing"]
       ]
     },
     {
