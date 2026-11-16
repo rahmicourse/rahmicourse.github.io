@@ -140,6 +140,14 @@ function docView(){
   if(st.tab==='materi') return tujuanPembelajaran();
   
 if(st.tab==='rptm' && st.meeting===2) return rptmLinkPertemuan2();
+  
+if(st.tab==='agenda' && st.meeting===6)
+  return `<h2>Agenda Pertemuan 6</h2>
+  <p>Klik tombol untuk membuka presentasi.</p>
+  <a class="btn primary" href="https://docs.google.com/presentation/d/1dr1LgbrWJCqKA35oC590pY3B8KZ-F9XJY51K8IyZLkE/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+  📊 Buka Presentasi Agenda Pertemuan 6
+  </a>`;
+
   let t=st.tab,n=st.meeting;
 let file=t==='kebijakan'?H.programFiles[0]:t==='materi'?null:t==='rptm'||t==='rpp'||t==='lk'||t==='rubrik'||t==='audio'||t==='gambar'?{label:tabs.find(x=>x[0]===t)[1],path:H.files[t](n)}:null;let available=t==='kebijakan'?false:exists(t,n);if(t==='materi')return `<h2>Materi dan Media</h2><p>Materi Pertemuan ${n}: ${esc(m().title)}.</p><div class="buttonrow">${tabs.filter(x=>['rptm','rpp','lk','audio','gambar'].includes(x[0])).map(x=>`<button class="btn" onclick="tab('${x[0]}')">${x[1]}</button>`).join('')}</div><div class="note">Unggah materi resmi untuk menampilkan isi pembelajaran yang lengkap.</div>`;if(t==='agenda')return `<h2>Agenda Pertemuan ${n}</h2>${m().stages.length?`<div class="stages">${m().stages.map((s,i)=>`<div class="card" style="margin-bottom:10px"><h2>Tahap ${i+1} — ${esc(s.title)} <small>(${s.duration})</small></h2>${s.frames.map(f=>`<p>• ${esc(f.title)}</p>`).join('')}</div>`).join('')}</div>`:'<div class="empty"><div class="big">📅</div>Agenda menunggu RPTM resmi.</div>'}`;if(!file)return `<div class="empty">Bahan belum ditetapkan.</div>`;if(!available)return `<div class="empty"><div class="big">📂</div><h2>${esc(file.label)} belum diunggah</h2><p>Tambahkan file di <code>${esc(file.path)}</code></p></div>`;if(t==='rptm')return `<iframe title="RPTM Pertemuan ${n}" src="${file.path}#toolbar=1&navpanes=1"></iframe>`;if(t==='gambar')return `<img class="media" src="${file.path}" alt="Gambar pembelajaran">`;if(t==='audio')return `<audio controls src="${file.path}"></audio>`;return `<div class="empty"><div class="big">📄</div><h2>${esc(file.label)} Pertemuan ${n}</h2><p>File Word asli tersedia untuk dibuka atau diunduh.</p><p>Browser tidak selalu dapat menampilkan DOCX langsung. Gunakan tombol Unduh atau Buka File.</p></div>`}
 
