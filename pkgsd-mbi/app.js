@@ -138,7 +138,27 @@ function rptmLinkPertemuan2() {
 
 function docView(){
   if(st.tab==='materi') return tujuanPembelajaran();
-  
+
+if(st.tab==='lk' && st.meeting===7){
+  const links = [
+    ["Bahan Tayang Kelompok", "https://docs.google.com/document/d/1_gwIcZG3UAMDUWcAugQj2hNgVpdlW1gL46eolZLfYcE/edit?usp=sharing"],
+    ["Bahan Tayang 2", ""],
+    ["Bahan Tayang 3", ""]
+  ];
+
+  return `
+    <h2>LK & Tugas — Pertemuan 7</h2>
+    <div class="card" style="padding:20px;margin-top:15px">
+      <div style="display:grid;gap:12px">
+        ${links.map(([nama,url]) => url
+          ? `<a class="btn primary" href="${esc(url)}" target="_blank" rel="noopener noreferrer">📄 ${esc(nama)} ↗</a>`
+          : `<div class="btn" style="opacity:.65">📄 ${esc(nama)} — Link belum diisi</div>`
+        ).join("")}
+      </div>
+    </div>
+  `;
+}
+
 if(st.tab==='rptm' && st.meeting===2) return rptmLinkPertemuan2();
 
 if(st.tab==='agenda' && st.meeting===7)
