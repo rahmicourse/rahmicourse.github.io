@@ -140,7 +140,14 @@ function docView(){
   if(st.tab==='materi') return tujuanPembelajaran();
   
 if(st.tab==='rptm' && st.meeting===2) return rptmLinkPertemuan2();
-  
+
+if(st.tab==='agenda' && st.meeting===7)
+  return `<h2>Agenda Pertemuan 7</h2>
+  <p>Klik tombol untuk membuka presentasi.</p>
+  <a class="btn primary" href="https://docs.google.com/presentation/d/1SYqrpDesZPVJg26QprXlIVFA1yDCkx6fOMK4FGsVovM/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer">
+  📊 Buka Presentasi Agenda Pertemuan 7
+  </a>`;
+
 if(st.tab==='agenda' && st.meeting===6)
   return `<h2>Agenda Pertemuan 6</h2>
   <p>Klik tombol untuk membuka presentasi.</p>
