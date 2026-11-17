@@ -136,6 +136,29 @@ function rptmLinkPertemuan2() {
   `;
 }
 
+function tampilBahan(url) {
+  const panel = document.getElementById('previewBahan');
+
+  if (!panel) return;
+
+  const preview = url.replace(/\/edit.*$/, '/preview');
+
+  panel.innerHTML = `
+    <div style="margin-top:20px">
+      <button class="btn"
+        onclick="document.getElementById('previewBahan').innerHTML=''">
+        ✕ Tutup Bahan Tayang
+      </button>
+
+      <iframe
+        src="${esc(preview)}"
+        style="width:100%;height:75vh;border:1px solid #ccc;margin-top:12px;border-radius:10px"
+        allowfullscreen>
+      </iframe>
+    </div>
+  `;
+}
+
 function docView(){
   if(st.tab==='materi') return tujuanPembelajaran();
 
