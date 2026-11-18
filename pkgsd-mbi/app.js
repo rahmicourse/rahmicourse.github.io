@@ -162,6 +162,43 @@ function tampilBahan(url) {
 function docView(){
   if(st.tab==='materi') return tujuanPembelajaran();
 
+if(st.tab==='agenda' && st.meeting===9){
+  const links = [
+    ["Bahan Tayang", "https://docs.google.com/presentation/d/1_BXgpJeaVWEqVK5yUIb6CqOSGBgSxJVbg4CN8HUJ050/edit?usp=sharing"],
+    ["Lembar Kerja", "https://docs.google.com/document/d/1552S76GrG1jFj_53wawpiWGlaoptL4-WWJ-NQDQBGyc/edit?usp=drive_link"]
+  ];
+
+  return `
+    <h2>Agenda — Pertemuan 9</h2>
+    ${links.map(([nama,url]) => `
+      <div class="card" style="padding:20px;margin:12px 0">
+        <h2>📄 ${esc(nama)}</h2>
+        <div class="buttonrow">
+          <button class="btn primary"
+            onclick="document.getElementById('preview9').src='${url.replace(/\/edit.*$/, '/preview')}';document.getElementById('panel9').style.display='block'">
+            Tampilkan di PID
+          </button>
+          <a class="btn" href="${esc(url)}"
+            target="_blank" rel="noopener noreferrer">
+            Buka Tab Baru ↗
+          </a>
+        </div>
+      </div>
+    `).join("")}
+
+    <div id="panel9" style="display:none;margin-top:20px">
+      <button class="btn"
+        onclick="document.getElementById('panel9').style.display='none';document.getElementById('preview9').src='about:blank'">
+        ✕ Tutup Pratinjau
+      </button>
+      <iframe id="preview9" src="about:blank"
+        style="width:100%;height:75vh;border:1px solid #ccc;margin-top:12px;border-radius:10px"
+        allowfullscreen>
+      </iframe>
+    </div>
+  `;
+}
+
 if(st.tab==='agenda' && st.meeting===8){
   const links = [
     ["Bahan Tayang", "https://docs.google.com/presentation/d/1jesgzE3cg6oleP6nALDbN5g95f6mLqD9JTMGMql86aE/edit?usp=sharing"],
