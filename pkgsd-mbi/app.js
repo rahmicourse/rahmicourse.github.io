@@ -384,7 +384,34 @@ function agendaRingkasan() {
 }
 
 function meeting(){let f=frames(),current=f[st.frame],n=st.meeting,docPath=['rptm','rpp','lk','rubrik','audio','gambar'].includes(st.tab)?H.files[st.tab](n):null,available=exists(st.tab,n);let stageHTML=m().stages.map((s,i)=>`<h4>Tahap ${i+1} — ${esc(s.title)} <small>${s.duration}</small></h4>${s.frames.map((x,j)=>{let k=m().stages.slice(0,i).reduce((a,v)=>a+v.frames.length,0)+j;return `<button onclick="setFrame(${k})" style="${st.frame===k?'background:#ffed8b':''}">${k+1}. ${esc(x.title)}</button>`}).join('')}`).join('');let display=st.tab==='agenda'&&st.meeting===2&&st.frame===-1
-  ? agendaRingkasan()
+  
+? agendaRingkasan() + `
+  <div class="card" style="margin-top:20px;padding:20px">
+    <h2>📊 Bahan Tayang — Pertemuan 2</h2>
+    <div class="buttonrow">
+      <button class="btn primary"
+        onclick="document.getElementById('panel2').style.display='block'">
+        Tampilkan di PID
+      </button>
+      <a class="btn"
+        href="https://docs.google.com/presentation/d/1Q41trZiN0EjwAJKa64WjJsL_057scEKZCEylh0EKIT0/edit?usp=sharing"
+        target="_blank" rel="noopener noreferrer">
+        Buka Tab Baru ↗
+      </a>
+    </div>
+    <div id="panel2" style="display:none;margin-top:15px">
+      <button class="btn"
+        onclick="document.getElementById('panel2').style.display='none'">
+        ✕ Tutup Pratinjau
+      </button>
+      <iframe
+        src="https://docs.google.com/presentation/d/1Q41trZiN0EjwAJKa64WjJsL_057scEKZCEylh0EKIT0/preview"
+        style="width:100%;height:75vh;border:0;margin-top:12px">
+      </iframe>
+    </div>
+  </div>
+`
+
   : st.tab==='agenda'&&current?`<div class="framebody"><span class="tag">Tahap ${current.si+1} · ${current.duration}</span><h2>${esc(current.title)}</h2><p>${esc(current.desc)}</p>${current.question?`<div class="question"><b>Pertanyaan fasilitator</b><br>${esc(current.question)}</div>`:''}<button class="btn yellow" onclick="tab('${current.material}')">Buka Bahan Terkait → ${esc(tabs.find(x=>x[0]===current.material)?.[1]||'Materi')}</button></div>`:docView();return layout(`Pertemuan ${n} ❯ ${tabs.find(x=>x[0]===st.tab)?.[1]}`,`<div class="tabs">${tabs.map(([key,label])=>`<button class="tab ${st.tab===key?'active':''}" onclick="tab('${key}')">${ICON[key]||'▣'} ${label}</button>`).join('')}</div><div class="workarea"><div class="docbox"><div class="doctitle">${st.tab==='agenda'?'📘 Agenda dan Aktivitas':st.tab==='rptm'?'📕 Rencana Pertemuan Tatap Muka':st.tab==='rpp'?'📕 Rencana Pembelajaran (RPP)':`📄 ${tabs.find(x=>x[0]===st.tab)?.[1]}`} — Pertemuan ${n}</div><div class="docbody">${display}</div></div><aside><div class="asidecard"><h3>Aksi Cepat</h3><div class="quick">${docPath&&available?`<a class="btn" href="${docPath}" download>⇩ Unduh</a><button onclick="copyLink('${docPath}')">🔗 Salin Tautan</button>`:`<button onclick="tab('rptm')">📄 RPTM</button><button onclick="tab('lk')">📄 LK</button>`}<button onclick="showQR()">▦ Bagikan QR</button><button onclick="window.print()">▣ Cetak</button></div></div><div class="asidecard"><h3>Daftar Isi / Quick Jump</h3><div class="stages">${stageHTML||'<p>Menunggu bahan resmi.</p>'}</div></div></aside></div><div class="bottom"><button class="btn primary" onclick="navigate('dashboard')">⌂ Home</button><button class="btn" onclick="setFrame(${st.frame-1})" ${!f.length||st.frame===0?'disabled':''}>❮ Sebelumnya</button><select aria-label="Pilih bagian" onchange="setFrame(Number(this.value))">${f.map((x,i)=>`<option value="${i}" ${i===st.frame?'selected':''}>${i+1}. ${esc(x.title)}</option>`).join('')||'<option>Belum tersedia</option>'}</select><button class="btn primary" onclick="setFrame(${st.frame+1})" ${!f.length||st.frame===f.length-1?'disabled':''}>Berikutnya ❯</button><span class="tag">${f.length?st.frame+1:0} / ${f.length}</span><button class="btn" onclick="toggleFull()">${st.full?'Keluar PID':'⛶ PID Fullscreen'}</button><button class="btn" onclick="goBack()">↩ Kembali</button></div>`)}
 function showQR(){const path=st.tab==='lk'?H.files.lk(st.meeting):st.tab==='rptm'?H.files.rptm(st.meeting):st.tab==='rpp'?H.files.rpp(st.meeting):st.tab==='rubrik'?H.files.rubrik(st.meeting):H.files.lk(st.meeting);if(!['lk','rptm','rpp','rubrik'].some(k=>H.files[k](st.meeting)===path&&exists(k,st.meeting))){toast('File belum tersedia untuk dibagikan');return}const url=new URL(path,location.href).href;const qr=document.getElementById('qrmodal');qr.innerHTML=`<div class="card" style="max-width:420px;margin:12vh auto;text-align:center"><h2>Bagikan Bahan</h2><img src="${path===H.files.lk(1)?'assets/qr-lk1.png':path===H.files.rpp(1)?'assets/qr-rpp1.png':path===H.files.rubrik(1)?'assets/qr-rubrik1.png':'assets/qr-rptm1.png'}" alt="QR unduhan" style="width:230px;max-width:100%"><p style="overflow-wrap:anywhere;font-size:13px">${esc(url)}</p><button class="btn primary" onclick="copyLink('${path}')">Salin Tautan</button> <button class="btn" onclick="document.getElementById('qrmodal').remove()">Tutup</button></div>`;qr.style.display='block'}
 function render(){let html=st.page==='landing'?landing():st.page==='profile'?profile():st.page==='dashboard'?dashboard():st.page==='meeting'?meeting():generic();app.innerHTML=html;const old=document.getElementById('qrmodal');if(old)old.remove();let qr=document.createElement('div');qr.id='qrmodal';qr.style.cssText='display:none;position:fixed;inset:0;background:#001b498c;z-index:50;padding:12px';qr.addEventListener('click',e=>{if(e.target===qr)qr.remove()});document.body.appendChild(qr)}
