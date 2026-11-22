@@ -35,3 +35,48 @@ body:has(.profile-stage){background:#0b172b;color:#f4f8ff}
 @media(max-width:1050px){.v2hero.profile-home{grid-template-columns:minmax(160px,1fr) minmax(160px,.7fr) minmax(320px,1.7fr);padding:18px;gap:12px}.profile-home .hero-bio-grid{gap:8px}.profile-home .hero-bio-grid p{font-size:10px}}
 @media(max-width:750px){.v2hero.profile-home{grid-template-columns:1fr 1fr;background:linear-gradient(120deg,#0867c9,#0e1d35)}.profile-home .hero-bio{grid-column:1/-1}.profile-home .hero-portrait img{max-height:200px}}
 @media(max-width:480px){.v2hero.profile-home{grid-template-columns:1fr}.profile-home .hero-portrait img{max-height:190px}.profile-home .hero-bio-grid{grid-template-columns:1fr 1fr}}
+
+
+/* REVISI BERANDA 22 NOV 2026: foto sejajar bawah, diagonal ke kanan, bio ringkas */
+@media (min-width: 751px) {
+  .v2hero.profile-home {
+    grid-template-columns: minmax(210px,1.08fr) minmax(180px,.78fr) minmax(440px,1.65fr);
+    background: linear-gradient(110deg,#0867c9 0%,#0755a8 53%,#132a48 53%,#0e1d35 100%);
+    padding-top: 14px;
+    padding-bottom: 0;
+    min-height: 345px;
+    align-items: stretch;
+  }
+  .profile-home .hero-portrait {
+    align-self: stretch;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: visible;
+  }
+  .profile-home .hero-portrait img {
+    max-height: 355px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: bottom center;
+    margin: 0;
+  }
+  .profile-home .hero-intro,
+  .profile-home .hero-bio { padding-bottom: 14px; }
+  .profile-home .hero-bio h2 { font-size: clamp(17px,1.5vw,22px); }
+  .profile-home .hero-school { font-size: 11px; margin-bottom: 8px; }
+  .profile-home .hero-bio-grid { gap: 8px 14px; }
+  .profile-home .hero-bio-grid h3 { font-size: clamp(11px,.9vw,13px); margin-bottom: 4px; }
+  .profile-home .hero-bio-grid p { font-size: clamp(10px,.76vw,12px); line-height: 1.25; margin: 2px 0; }
+}
+@media (min-width: 751px) and (max-width: 1050px) {
+  .v2hero.profile-home {
+    grid-template-columns: minmax(155px,1fr) minmax(155px,.78fr) minmax(310px,1.6fr);
+    min-height: 315px;
+    padding-top: 12px;
+    padding-bottom: 0;
+  }
+  .profile-home .hero-portrait img { max-height: 315px; }
+}
