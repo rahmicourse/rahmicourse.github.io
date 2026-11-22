@@ -1,9 +1,47 @@
 {
   "agenda": [],
   "analisis": [],
-  "modelling": [],
+  "modelling": [
+    {
+      "judul": "Activity 1",
+      "url": ""
+    },
+    {
+      "judul": "Activity 2",
+      "url": ""
+    },
+    {
+      "judul": "Activity 3",
+      "url": ""
+    },
+    {
+      "judul": "Activity 4",
+      "url": ""
+    },
+    {
+      "judul": "Activity 5",
+      "url": ""
+    }
+  ],
   "microteaching": [],
-  "audio": [],
+  "audio": [
+    {
+      "judul": "Audio Activity 1",
+      "url": ""
+    },
+    {
+      "judul": "Audio Activity 2",
+      "url": ""
+    },
+    {
+      "judul": "Audio Activity 3",
+      "url": ""
+    },
+    {
+      "judul": "Audio Activity 4",
+      "url": ""
+    }
+  ],
   "video": [],
   "games": [],
   "extras": []

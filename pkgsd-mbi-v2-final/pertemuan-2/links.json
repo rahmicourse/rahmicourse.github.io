@@ -7,12 +7,16 @@
   ],
   "analisis": [
     {
-      "judul": "Refleksi RGTK",
-      "url": "https://drive.google.com/file/d/1VG93MlsYeRBfmOQjN4feaNKHGx5OF6VO/view?usp=sharing"
+      "judul": "Analisis CP/TP",
+      "url": ""
     },
     {
-      "judul": "Analisa CP TP",
-      "url": "https://drive.google.com/drive/u/0/folders/1okLFC1Y96iF1VTWGLX8TtbWni-W_hXWn"
+      "judul": "Lembar Kerja",
+      "url": ""
+    },
+    {
+      "judul": "Refleksi RGTK",
+      "url": "https://drive.google.com/file/d/1VG93MlsYeRBfmOQjN4feaNKHGx5OF6VO/view?usp=sharing"
     }
   ],
   "modelling": [
@@ -29,17 +33,39 @@
       "url": "https://drive.google.com/file/d/1nC4rU2nWfthpGdfWRXE-H88QHEmLVRT2/view?usp=sharing"
     },
     {
-      "judul": "Activity 4 — Sing",
-      "url": "https://youtu.be/0kMUybkY3oc"
+      "judul": "Activity 4",
+      "url": ""
     },
     {
-      "judul": "Activity 6",
+      "judul": "Activity 5",
       "url": "https://drive.google.com/file/d/1aa1K9-knH4sNpr-83FhtkWUGH8K4ZRBp/view?usp=sharing"
     }
   ],
   "microteaching": [],
-  "audio": [],
-  "video": [],
+  "audio": [
+    {
+      "judul": "Audio Activity 1",
+      "url": ""
+    },
+    {
+      "judul": "Audio Activity 2",
+      "url": ""
+    },
+    {
+      "judul": "Audio Activity 3",
+      "url": ""
+    },
+    {
+      "judul": "Audio Activity 4",
+      "url": ""
+    }
+  ],
+  "video": [
+    {
+      "judul": "Video Activity 4",
+      "url": "https://youtu.be/0kMUybkY3oc"
+    }
+  ],
   "games": [],
   "extras": []
 }

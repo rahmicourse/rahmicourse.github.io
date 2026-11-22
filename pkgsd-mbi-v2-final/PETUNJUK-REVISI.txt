@@ -1,0 +1,8 @@
+PKGSD-MBI V2 REVISI
+
+Upload folder pkgsd-mbi-v2-final ke root repository GitHub, mengganti file dengan nama sama.
+Untuk update ringan: unggah agenda.pdf, analisis-cp.pdf, lembar-kerja.pdf, gambar-pendukung.jpg, activity-1.jpg s.d. activity-5.jpg, langkah-2.jpg, classroom.jpg ke folder pertemuan-N.
+Audio: masukkan file MP3 di media/ dan tulis URL relatif media/nama.mp3 di links.json, bagian audio.
+Link game: isi games pada links.json.
+Foto profil tetap assets/rahmi.jpg.
+Catatan: file kosong tidak otomatis ditampilkan; link video game eksternal dapat menolak iframe.

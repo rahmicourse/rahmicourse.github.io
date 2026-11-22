@@ -1,0 +1,1 @@
+Pertemuan 1: activity-1.jpg sampai activity-4.jpg adalah gambar flashcard dari dokumen yang diunggah. audio-activity-1.mp3 dan audio-activity-2.mp3 tersedia pada panel kanan. Audio Activity 3 dan 4 belum tersedia; isi nama file dan URL di pertemuan-1/links.json setelah diunggah. Activity 5 tetap disediakan untuk game. File flashcard-goodbye.jpg tersedia sebagai gambar tambahan.

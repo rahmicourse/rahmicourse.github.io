@@ -6,14 +6,52 @@
     }
   ],
   "analisis": [],
-  "modelling": [],
+  "modelling": [
+    {
+      "judul": "Activity 1",
+      "url": ""
+    },
+    {
+      "judul": "Activity 2",
+      "url": ""
+    },
+    {
+      "judul": "Activity 3",
+      "url": ""
+    },
+    {
+      "judul": "Activity 4",
+      "url": ""
+    },
+    {
+      "judul": "Activity 5",
+      "url": ""
+    }
+  ],
   "microteaching": [
     {
       "judul": "Bahan Tayang Kelompok",
       "url": "https://docs.google.com/document/d/1_gwIcZG3UAMDUWcAugQj2hNgVpdlW1gL46eolZLfYcE/edit?usp=sharing"
     }
   ],
-  "audio": [],
+  "audio": [
+    {
+      "judul": "Audio Activity 1",
+      "url": ""
+    },
+    {
+      "judul": "Audio Activity 2",
+      "url": ""
+    },
+    {
+      "judul": "Audio Activity 3",
+      "url": ""
+    },
+    {
+      "judul": "Audio Activity 4",
+      "url": ""
+    }
+  ],
   "video": [],
   "games": [],
   "extras": []

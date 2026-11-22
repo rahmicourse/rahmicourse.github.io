@@ -6,7 +6,28 @@
       "url": "../files/rptm/rptm-1.pdf"
     }
   ],
-  "modelling": [],
+  "modelling": [
+    {
+      "judul": "Activity 1",
+      "url": ""
+    },
+    {
+      "judul": "Activity 2",
+      "url": ""
+    },
+    {
+      "judul": "Activity 3",
+      "url": ""
+    },
+    {
+      "judul": "Activity 4",
+      "url": ""
+    },
+    {
+      "judul": "Activity 5",
+      "url": ""
+    }
+  ],
   "microteaching": [
     {
       "judul": "LK Pertemuan 1 (dokumen lama)",
@@ -17,7 +38,24 @@
       "url": "../files/rubrik/rubrik-1.docx"
     }
   ],
-  "audio": [],
+  "audio": [
+    {
+      "judul": "Audio Activity 1",
+      "url": "audio-activity-1.mp3"
+    },
+    {
+      "judul": "Audio Activity 2",
+      "url": "audio-activity-2.mp3"
+    },
+    {
+      "judul": "Audio Activity 3",
+      "url": ""
+    },
+    {
+      "judul": "Audio Activity 4",
+      "url": ""
+    }
+  ],
   "video": [],
   "games": [],
   "extras": []
