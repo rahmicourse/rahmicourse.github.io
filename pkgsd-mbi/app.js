@@ -161,6 +161,35 @@ function tampilBahan(url) {
 
 function docView(){
   if(st.tab==='materi') return tujuanPembelajaran();
+  
+if(st.tab==='agenda' && st.meeting===2){
+  const url = "https://docs.google.com/presentation/d/1Q41trZiN0EjwAJKa64WjJsL_057scEKZCEylh0EKIT0/edit?usp=sharing";
+  const preview = url.replace(/\/edit.*$/, '/preview');
+
+  return `
+    <h2>Agenda Pertemuan 2 — My Self</h2>
+    <div class="card" style="padding:20px">
+      <h2>📊 Bahan Tayang</h2>
+      <div class="buttonrow">
+        <button class="btn primary"
+          onclick="document.getElementById('preview2').src='${preview}';document.getElementById('panel2').style.display='block'">
+          Tampilkan di PID
+        </button>
+        <a class="btn" href="${esc(url)}" target="_blank" rel="noopener noreferrer">
+          Buka Tab Baru ↗
+        </a>
+      </div>
+    </div>
+    <div id="panel2" style="display:none;margin-top:15px">
+      <button class="btn"
+        onclick="document.getElementById('panel2').style.display='none'">
+        ✕ Tutup Pratinjau
+      </button>
+      <iframe id="preview2" style="width:100%;height:75vh;border:0;margin-top:12px"></iframe>
+    </div>
+  `;
+}
+
 
 if(st.tab==='agenda' && st.meeting===10){
   const url = "https://docs.google.com/presentation/d/1vGkGHCMD0DmFoNQuL2l5IiE9slrxlEpodbCdrXp9L18/edit?usp=sharing";
