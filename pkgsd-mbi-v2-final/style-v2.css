@@ -2,3 +2,26 @@
 
 /* Penyempurnaan V2: konsisten di seluruh pertemuan */
 .v2hero{min-height:230px}.v2hero .developer{font-size:15px;font-weight:600;opacity:.95;margin-top:8px}.profile-hero-btn{background:#fff;color:#0757b2;border:0;border-radius:9px;padding:11px 16px;font-weight:800;margin-top:20px}.home-title{display:flex;align-items:center;justify-content:space-between;gap:10px}.profile-wrap{max-width:1250px;margin:24px auto;padding:0 20px}.profile-layout{display:grid;grid-template-columns:minmax(230px,34%) minmax(0,1fr);gap:30px;margin-top:18px;background:#fff;padding:25px;border:1px solid #d0e2fa;border-radius:16px}.profile-photo img{width:100%;height:auto;display:block;object-fit:contain;border-radius:0;animation:none;transform:none}.profile-info h1{font-size:clamp(25px,3vw,40px);margin:10px 0}.profile-info h2{font-size:19px;margin:24px 0 9px}.profile-info li{margin:7px 0}.profile-info .eyebrow{color:#1265ca}.profile-info .school{font-weight:750}.split-layout{display:grid;gap:14px;align-items:start}.cp-layout{grid-template-columns:minmax(0,1fr) minmax(0,2.2fr)}.micro-layout{grid-template-columns:minmax(0,2.2fr) minmax(0,1fr)}.split-layout h3{font-size:16px;margin:4px 0 13px}.side-picture,.primary-picture{min-width:0}.side-viewer{height:min(76vh,950px)}.agenda-viewer{height:min(80vh,1000px)}.audioitem .small-muted{display:block;margin-top:5px}.profile-info a{color:#065ec2}.resourcebar{margin-top:2px}@media(max-width:850px){.profile-layout,.cp-layout,.micro-layout{grid-template-columns:1fr}.profile-photo{max-width:350px}.home-title{flex-wrap:wrap}}
+
+/* Profil fasilitator: satu layar, tema navy, tanpa animasi */
+body:has(.profile-stage){background:#0b172b;color:#f4f8ff}
+.profile-stage{min-height:calc(100dvh - 76px);padding:clamp(12px,1.6vh,20px) clamp(14px,2vw,32px);background:radial-gradient(ellipse at 15% 5%,#1b3e69 0%,transparent 43%),linear-gradient(130deg,#0b172b,#101e35 68%,#172c48);color:#f4f8ff;display:flex;flex-direction:column;gap:clamp(8px,1.2vh,15px)}
+.profile-stage-head{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#a8c9ff;font-size:12px;font-weight:800;letter-spacing:.08em}
+.profile-dashboard{flex:1;min-height:0;display:grid;grid-template-columns:minmax(210px,30%) minmax(0,1fr);gap:clamp(12px,1.4vw,22px);align-items:stretch}
+.profile-identity{min-width:0;background:#ffffff0a;border:1px solid #ffffff24;border-radius:18px;padding:clamp(12px,1.5vw,20px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.profile-identity .profile-photo{width:100%;min-height:0;flex:0 1 auto;display:flex;align-items:center;justify-content:center}
+.profile-identity .profile-photo img{display:block;max-width:100%;max-height:min(49vh,460px);width:auto;height:auto;object-fit:contain;border-radius:0;animation:none!important;transform:none!important;filter:none!important}
+.profile-identity h1{font-size:clamp(20px,2vw,32px);line-height:1.12;margin:14px 0 7px}
+.profile-identity p{margin:0;color:#b7d3f5;font-weight:650;font-size:clamp(12px,1vw,16px)}
+.profile-cards{min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:1.15fr .85fr;gap:clamp(10px,1.3vw,18px)}
+.profile-card{min-width:0;background:#ffffff0d;border:1px solid #ffffff26;border-radius:16px;padding:clamp(12px,1.4vw,22px);box-shadow:0 12px 32px #00000016}
+.profile-card h2{font-size:clamp(15px,1.4vw,21px);margin:0 0 clamp(8px,1vh,13px);color:#fff}
+.profile-card p,.profile-card li{font-size:clamp(12px,1.02vw,16px);line-height:1.42;color:#dbe8fa}
+.profile-card p{margin:7px 0}.profile-card ul{margin:6px 0;padding-left:20px}.profile-card li{margin:5px 0}
+.profile-card a{color:#9ac8ff;overflow-wrap:anywhere}
+.level-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid #ffffff20;font-size:clamp(12px,1vw,16px)}
+.level-row strong{background:#1d5eb2;border-radius:8px;padding:5px 11px;color:#fff}
+.profile-footer{text-align:center;color:#9eb8db;font-size:11px}
+@media(min-width:1000px) and (min-height:620px){body:has(.profile-stage){overflow:hidden}.profile-stage{height:calc(100dvh - 76px)}.profile-card{overflow:hidden}}
+@media(max-width:999px), (max-height:619px){body:has(.profile-stage){overflow:auto}.profile-dashboard{grid-template-columns:1fr}.profile-cards{grid-template-rows:auto}.profile-identity .profile-photo img{max-height:300px}}
+@media(max-width:580px){.profile-cards{grid-template-columns:1fr}.profile-stage-head span{font-size:10px}}
