@@ -1,0 +1,23 @@
+PKGSD-MBI V2 FINAL — SISTEM FOLDER PER PERTEMUAN
+
+CARA MEMAKAI:
+1. Unggah SELURUH folder pkgsd-mbi-v2-final ke ROOT repository GitHub Pages.
+2. Buka https://rahmicourse.github.io/pkgsd-mbi-v2-final/
+3. Setiap pertemuan punya folder pertemuan-1 sampai pertemuan-10.
+4. GANTI materi cukup unggah nama standar berikut di folder pertemuan terkait:
+   agenda.pdf, analisis-cp.pdf, modelling.pdf, microteaching.pdf
+   Alternatif gambar: agenda.jpg/png, analisis-cp.jpg/png, modelling.jpg/png, microteaching.jpg/png.
+   Video agenda dapat memakai agenda.mp4.
+   PDF lebih diutamakan bila PDF dan JPG sama-sama ada.
+5. Untuk banyak dokumen atau link eksternal: edit HANYA links.json di folder pertemuan.
+   Format: {"agenda":[{"judul":"Slide Agenda","url":"https://..."}],"games":[{"judul":"Game","url":"https://..."}]}
+   Kolom yang tersedia: agenda, analisis, modelling, microteaching, audio, video, games, extras.
+   URL lokal relatif folder pertemuan, contoh "media/audio1.mp3".
+6. Tidak perlu mengedit app-v2.js, style-v2.css, atau data.js untuk mengganti media.
+7. Jika link eksternal tidak dapat ditampilkan dalam iframe (mis. folder Google Drive, beberapa game), sumber tersebut perlu dibuka melalui penyedia aslinya.
+8. DOCX tidak tampil langsung dalam iframe; gunakan PDF untuk pratinjau terbaik.
+9. Karena GitHub Pages adalah web statis, file baru dengan NAMA DI LUAR standar harus dicantumkan di links.json.
+10. Pengujian harus melalui URL GitHub Pages / local HTTP server, bukan klik dua kali index.html (file:// tidak mendukung fetch JSON).
+
+Website lama /pkgsd-mbi/ tidak berubah.
+Data pertemuan dari data.js lama dipertahankan. Link yang sudah ada dari V2 sebelumnya dipindahkan ke links.json.
