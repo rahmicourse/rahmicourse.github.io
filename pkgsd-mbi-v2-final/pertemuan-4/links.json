@@ -43,6 +43,11 @@
     }
   ],
   "video": [],
-  "games": [],
+  "games": [
+  {
+    "judul": "Body Parts Challenge",
+    "url": "pertemuan-4/body-parts-game.html"
+  }
+],
   "extras": []
 }
