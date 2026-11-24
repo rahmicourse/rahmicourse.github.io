@@ -35,8 +35,8 @@
       "url": "https://rahmicourse.github.io/pkgsd-mbi-v2-final/pertemuan-5/audio-1.mp3"
     },
     {
-      "judul": "Audio Activity 2",
-      "url": ""https://rahmicourse.github.io/pkgsd-mbi-v2-final/pertemuan-5/audio-2.mp3""
+  "judul": "Audio Activity 2",
+  "url": "https://rahmicourse.github.io/pkgsd-mbi-v2-final/pertemuan-5/audio-2.mp3"
     },
     {
       "judul": "Audio Activity 3",
@@ -48,6 +48,11 @@
     }
   ],
   "video": [],
-  "games": [],
+  "games": [
+  {
+    "judul": "Activity 3 - Meet Mimi: True or False",
+    "url": "https://rahmicourse.github.io/pkgsd-mbi-v2-final/pertemuan-5/mimi-game.html"
+  }
+],
   "extras": []
 }
