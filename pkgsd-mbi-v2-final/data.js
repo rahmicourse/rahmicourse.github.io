@@ -68,3 +68,14 @@ window.HUB.meetings[1].stages = [
     ]
   }
 ];
+/* JUDUL TOPIK DASHBOARD PERTEMUAN */
+
+window.HUB.meetings[2].title = "My Self";
+window.HUB.meetings[3].title = "My Family (I Love my family, Family Tree)";
+window.HUB.meetings[4].title = "My Body";
+window.HUB.meetings[5].title = "MMy Body -Media Creative";
+window.HUB.meetings[6].title = "My Hobby- Media Creative";
+window.HUB.meetings[7].title = "My Hobby- Observation";
+window.HUB.meetings[8].title = "My Pets- Observation";
+window.HUB.meetings[9].title = "My Pet- Matriks Keselarasan";
+window.HUB.meetings[10].title = "praktik asesmendidalam kelas";
