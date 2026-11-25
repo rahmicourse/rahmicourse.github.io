@@ -108,3 +108,36 @@ body:has(.profile-stage){background:#0b172b;color:#f4f8ff}
   .profile-home .hero-bio {padding-left: 16px;}
   .profile-home .hero-portrait img {max-height: 315px;}
 }
+/* Perbaikan header khusus layar HP */
+@media (max-width: 600px) {
+  .topbar {
+    height: 60px;
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .brand-center {
+    gap: 6px;
+  }
+
+  .brand-center .pill {
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .brand-left {
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .brand-left img {
+    height: 28px;
+    max-width: 120px;
+  }
+
+  .brand-left .bar {
+    height: 25px;
+  }
+}
