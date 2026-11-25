@@ -60,7 +60,12 @@
       "url": ""
     }
   ],
-  "video": [],
+  "video": [
+  {
+    "judul": "Activity 1 - My Hobby Video",
+    "url": "https://www.youtube.com/embed/N1o4oOXLOZc"
+  }
+],
   "games": [],
   "extras": []
 }
