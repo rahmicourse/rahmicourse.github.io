@@ -5,7 +5,12 @@
       "url": ""
     }
   ],
-  "analisis": [],
+  "analisis": [
+  {
+    "judul": "gambar-pendukung",
+    "url": "https://rahmicourse.github.io/pkgsd-mbi-v2-final/pertemuan-6/gambar-pendukung.jpg"
+  }
+],
   "modelling": [
     {
       "judul": "Activity 1",
