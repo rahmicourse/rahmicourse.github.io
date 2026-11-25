@@ -43,23 +43,23 @@
   ],
   "microteaching": [],
   "audio": [
-    {
-      "judul": "Audio Activity 1",
-      "url": ""
-    },
-    {
-      "judul": "Audio Activity 2",
-      "url": ""
-    },
-    {
-      "judul": "Audio Activity 3",
-      "url": ""
-    },
-    {
-      "judul": "Audio Activity 4",
-      "url": ""
-    }
-  ],
+  {
+    "judul": "Audio Activity 1",
+    "url": ""
+  },
+  {
+    "judul": "Audio Activity 2",
+    "url": "https://rahmicourse.github.io/pkgsd-mbi-v2-final/pertemuan-6/media/audio-2.mp3"
+  },
+  {
+    "judul": "Audio Activity 3",
+    "url": "https://rahmicourse.github.io/pkgsd-mbi-v2-final/pertemuan-6/media/audio-3.mp3"
+  },
+  {
+    "judul": "Audio Activity 4",
+    "url": ""
+  }
+],
   "video": [
   {
     "judul": "Activity 1 - My Hobby Video",
