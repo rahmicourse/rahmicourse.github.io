@@ -9,14 +9,15 @@
       "url": ""
     }
   ],
-  "analisis": ["judul": "gambar-pendukung",
+  "analisis": [
+    "judul": "gambar-pendukung",
     "url": "https://rahmicourse.github.io/pkgsd-mbi-v2-final/pertemuan-8/gambar-pendukung.jpg"
   },
   {
     "judul": "Pembahasan",
     "url": "https://rahmicourse.github.io/pkgsd-mbi-v2-final/pertemuan-8/pembahasan.html"
   }
-],],
+],
   "modelling": [
     {
       "judul": "Activity 1",
