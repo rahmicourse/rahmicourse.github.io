@@ -10,7 +10,8 @@
     }
   ],
   "analisis": [
-    "judul": "gambar-pendukung",
+    {
+      "judul": "gambar-pendukung",
     "url": "https://rahmicourse.github.io/pkgsd-mbi-v2-final/pertemuan-8/gambar-pendukung.jpg"
   },
   {
