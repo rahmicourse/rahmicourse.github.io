@@ -51,7 +51,12 @@
       "url": ""
     }
   ],
-  "video": [],
+  "video": [
+  {
+    "judul": "Video Activity 1 – Old MacDonald Had a Farm",
+    "url": "https://www.youtube.com/watch?v=UZO_yKFyXXc"
+  }
+],
   "games": [],
   "extras": []
 }
