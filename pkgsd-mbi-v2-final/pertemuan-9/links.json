@@ -9,7 +9,15 @@
       "url": ""
     }
   ],
-  "analisis": [],
+  "analisis": [{
+    "judul": "gambar-pendukung",
+    "url": "gambar-pendukung.png"
+  },
+  {
+    "judul": "Pembahasan",
+    "url": "pembahasan.html"
+  }
+  ],
   "modelling": [
     {
       "judul": "Activity 1",
@@ -51,7 +59,16 @@
       "url": ""
     }
   ],
-  "video": [],
-  "games": [],
+  "video": [ {
+    "judul": "Video Activity 1 - Ice Breaking",
+    "url": "https://www.youtube.com/watch?v=Eaw2OKc5HQk"
+  }
+  ],
+  "games": [
+    {
+    "judul": "Game Activity 1 - Mystery Word Challenge",
+    "url": "game-1.html"
+  }
+  ],
   "extras": []
 }
