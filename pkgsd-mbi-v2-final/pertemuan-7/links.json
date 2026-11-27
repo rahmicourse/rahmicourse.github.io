@@ -5,7 +5,16 @@
       "url": ""
     }
   ],
-  "analisis": [],
+  "analisis": [
+  {
+    "judul": "Gambar Pendukung",
+    "url": "pertemuan-7/gambar-pendukung.jpg"
+  },
+  {
+    "judul": "Pembahasan",
+    "url": "pertemuan-7/pembahasan.html"
+  }
+],
   "modelling": [
     {
       "judul": "Activity 1",
